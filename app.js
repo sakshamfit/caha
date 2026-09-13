@@ -27,11 +27,12 @@
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ----- Tuning ----- */
-  const SCENE_VH = 250;        // scroll height per scene, in viewport heights
-  const PRELOAD_AHEAD = 48;    // frames to preload ahead of the playhead
-  const PRELOAD_BEHIND = 12;   // frames to keep behind the playhead
+  const SCENE_VH = 150;        // scroll height per scene, in viewport heights
+  const SMOOTHING = 10;        // playhead damping (higher = snappier)
+  const PRELOAD_AHEAD = 60;    // frames to preload ahead of the playhead
+  const PRELOAD_BEHIND = 15;   // frames to keep behind the playhead
   const MAX_CONCURRENT = 6;    // parallel image downloads
-  const CACHE_CAP = 90;        // decoded frames kept in memory
+  const CACHE_CAP = 100;       // decoded frames kept in memory
   const CROSSFADE = 18;        // frames of crossfade at scene boundaries
   const IDLE_DELAY = 4000;     // ms of no input before autoplay kicks in
   const END_HOLD = 2200;       // ms to hold the last frame before looping
@@ -42,14 +43,16 @@
   let totalFrames = 0;
   let fps = 24;
 
-  let currentGlobal = -1;
+  let playhead = -1;            // smoothed, fractional frame position
+  let currentGlobal = -1;       // integer frame currently on screen
   const cache = new Map();      // key -> HTMLImageElement (LRU order)
   const requested = new Set();  // keys queued or loaded
   let queue = [];               // pending loads, sorted by priority
   let activeLoads = 0;
 
   let lastInput = performance.now();
-  let autoAccumulator = 0;
+  let autoActive = false;
+  let autoScrollY = 0;
   let endHoldUntil = 0;
 
   const keyOf = (si, f) => si * 1000 + f;           // f = 1-based frame number
@@ -112,21 +115,22 @@
   }
 
   function scheduleAround(g) {
-    for (let i = 1; i <= PRELOAD_AHEAD; i++) {       // ahead
+    const si = sceneOf(g);
+    const local = g - offsets[si];
+    enqueue(si, local + 1, 0);                     // the frame on screen now
+    for (let i = 1; i <= PRELOAD_AHEAD; i++) {     // ahead
       const gg = g + i;
       if (gg >= totalFrames) break;
       const s2 = sceneOf(gg);
       enqueue(s2, gg - offsets[s2] + 1, i);
     }
-    for (let i = 1; i <= PRELOAD_BEHIND; i++) {      // behind
+    for (let i = 1; i <= PRELOAD_BEHIND; i++) {    // behind
       const gg = g - i;
       if (gg < 0) break;
       const s2 = sceneOf(gg);
       enqueue(s2, gg - offsets[s2] + 1, i + 0.5);
     }
     // make sure the next scene's opening frames exist for the crossfade
-    const si = sceneOf(g);
-    const local = g - offsets[si];
     if (si + 1 < scenes.length && local >= scenes[si].frames - CROSSFADE - 12) {
       for (let f = 1; f <= CROSSFADE; f++) {
         enqueue(si + 1, f, scenes[si].frames - local + f);
@@ -174,38 +178,39 @@
   function maxScroll() {
     return document.documentElement.scrollHeight - window.innerHeight;
   }
-  function globalFromScroll() {
+  /* Fractional target frame for the current scroll position */
+  function targetFromScroll() {
     const m = maxScroll();
     if (m <= 0) return 0;
-    return clamp(
-      Math.round((window.scrollY / m) * (totalFrames - 1)),
-      0, totalFrames - 1
-    );
+    return clamp((window.scrollY / m) * (totalFrames - 1), 0, totalFrames - 1);
   }
   function scrollForGlobal(g) {
     const m = maxScroll();
     return (g / (totalFrames - 1)) * m;
   }
+  function pxPerFrame() {
+    return maxScroll() / (totalFrames - 1);
+  }
 
-  /* ----- Rendering ----- */
-  function draw() {
-    if (!totalFrames || currentGlobal < 0) return;
-    const g = currentGlobal;
+  /* ----- Rendering (ph = fractional playhead) ----- */
+  function drawAt(ph) {
+    if (!totalFrames || ph < 0) return;
+    const g = Math.round(ph);
     const si = sceneOf(g);
-    const local = g - offsets[si];          // 0-based within scene
-    const frameNo = local + 1;              // 1-based file number
+    const localF = clamp(ph - offsets[si], 0, scenes[si].frames - 1);
+    const frameNo = Math.floor(localF) + 1;        // 1-based file number
 
     const img = getImage(si, frameNo);
     if (img && img.complete && img.naturalWidth) drawCover(img, 1);
 
     // Crossfade into the next scene during the last CROSSFADE frames
     const framesHere = scenes[si].frames;
-    if (local >= framesHere - CROSSFADE && si + 1 < scenes.length) {
-      const t = (local - (framesHere - CROSSFADE)) / (CROSSFADE - 1);
+    if (localF >= framesHere - CROSSFADE && si + 1 < scenes.length) {
+      const t = clamp((localF - (framesHere - CROSSFADE)) / (CROSSFADE - 1), 0, 1);
       const nextFrame = clamp(Math.round(t * CROSSFADE) + 1, 1, scenes[si + 1].frames);
       const nimg = getImage(si + 1, nextFrame);
       if (nimg && nimg.complete && nimg.naturalWidth) {
-        drawCover(nimg, easeInOut(clamp(t, 0, 1)));
+        drawCover(nimg, easeInOut(t));
       }
     }
   }
@@ -220,7 +225,7 @@
     if (g > 2) hintEl.classList.add('hide');
   }
 
-  /* ----- Main loop: scrub + idle autoplay ----- */
+  /* ----- Main loop: smoothed scrub + idle autoplay ----- */
   let lastT = performance.now();
   function tick(now) {
     const dt = Math.min(50, now - lastT);
@@ -230,35 +235,43 @@
     if (!prefersReducedMotion && idle) {
       // Autoplay at the manifest fps by scrolling the page itself,
       // so the scrollbar always reflects the true position.
-      const g = globalFromScroll();
-      if (g >= totalFrames - 1) {
+      const t = targetFromScroll();
+      if (t >= totalFrames - 1.01) {
+        autoActive = false;
         if (!endHoldUntil) endHoldUntil = now + END_HOLD;
         else if (now >= endHoldUntil) {
           endHoldUntil = 0;
+          autoScrollY = 0;
           window.scrollTo(0, 0);           // loop the reel
         }
       } else {
         endHoldUntil = 0;
-        autoAccumulator += (dt / 1000) * fps;
-        const adv = Math.floor(autoAccumulator);
-        if (adv > 0) {
-          autoAccumulator -= adv;
-          const target = clamp(g + adv, 0, totalFrames - 1);
-          window.scrollTo(0, scrollForGlobal(target));
+        if (!autoActive) {
+          autoActive = true;
+          autoScrollY = window.scrollY;
         }
+        autoScrollY += (dt / 1000) * fps * pxPerFrame();
+        window.scrollTo(0, autoScrollY);
       }
     } else {
-      autoAccumulator = 0;
+      autoActive = false;
       endHoldUntil = 0;
     }
 
-    const g = globalFromScroll();
+    // Damped playhead: chunky wheel input becomes a cinematic glide
+    const target = targetFromScroll();
+    if (playhead < 0) playhead = target;
+    const ease = 1 - Math.exp(-SMOOTHING * (dt / 1000));
+    playhead += (target - playhead) * ease;
+    if (Math.abs(target - playhead) < 0.02) playhead = target;
+
+    const g = Math.round(playhead);
     if (g !== currentGlobal) {
       currentGlobal = g;
       scheduleAround(g);
       updateUI(g);
     }
-    draw();
+    drawAt(playhead);
     requestAnimationFrame(tick);
   }
 
@@ -323,7 +336,8 @@
     loaderEl.classList.add('done');
     setTimeout(() => loaderEl.remove(), 1000);
 
-    currentGlobal = globalFromScroll();
+    playhead = targetFromScroll();
+    currentGlobal = Math.round(playhead);
     scheduleAround(currentGlobal);
     updateUI(currentGlobal);
     lastInput = performance.now();
