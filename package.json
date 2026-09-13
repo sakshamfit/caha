@@ -1,0 +1,17 @@
+{
+  "name": "caha",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Caha — a cafe in motion. Scroll-scrubbed frame animation.",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "start": "node tools/serve.mjs",
+    "build:frames": "node tools/build-frames.mjs",
+    "simulate": "node tools/simulate.mjs",
+    "test": "node --test tools/*.test.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

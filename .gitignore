@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+# Source frames are 239 MB of JPEGs; keep them out of the working tree.
+# tools/build-frames.mjs reads them from CAHA_SRC_FRAMES and writes the
+# optimised web set that actually ships.
+assets/frames/
+assets/web-1600/
+assets/web-960/
+assets/web-m/
