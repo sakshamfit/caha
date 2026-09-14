@@ -107,10 +107,12 @@ already too many opinions).
    (never upscale) → keep every 2nd frame → WebP q60. Measured on the real reel:
    **4,200 files / 239.4 MB → 2,100 files / 112.6 MB** (avg 55 KB), i.e. ~8 MB streamed per
    scene viewed instead of ~20 MB, half the requests, and 1600×900 decoded bitmaps
-   (5.8 MB vs 8.3 MB). `--format avif --quality 45` measures ~40% smaller still
-   (48 KB vs 93 KB per identical frame) at a slower encode; the engine picks
-   `assets/web/` (or a `assets/web-m/` mobile tier) automatically and falls back to the
-   source reel if no build exists.
+   (5.8 MB vs 8.3 MB). Three built tiers, probed lightest-suitable-first and falling back
+   to the source reel: `assets/web-avif/` (desktop, AVIF q45 — ~40 % smaller than the WebP
+   tier at equal quality, 48 KB vs 93 KB per identical frame), `assets/web/` (desktop
+   WebP q60, widest decode support), `assets/web-m/` (phones: 960 px WebP q55 — small
+   transfers *and* cheap decodes on weak SoCs, where AVIF's decode cost is the wrong
+   trade).
 2. **Decode off the hot path**: frames are fetched as blobs and decoded with
    `createImageBitmap()` (off-main-thread, upload-ready), instead of `new Image()` whose
    first `drawImage` stalls.
@@ -129,9 +131,14 @@ already too many opinions).
    bytes, because preloading more than the budget can hold is pure eviction churn
    (measured 1,105 pointless evictions before this). Peak bitmaps 799 MB → 417 MB desktop
    (bounded), → **78 MB** on mobile.
-7. **Autoplay that behaves** (FIX E/K): velocity ramp-in, instant cancel on any input,
-   rests at the end instead of teleporting, opt-out via `?autoplay=0`, and teleports
-   (End/Home/anchors/scroll-restore) are **cuts**, not rewind sweeps.
+7. **Autoplay that behaves** (FIX E/K, reworked in v2.1 after review): it is now
+   **opt-in** — a round ▶ control (bottom centre, `aria-pressed`, hidden under
+   `prefers-reduced-motion`) starts the film; `?autoplay=1` still pre-enables it for
+   kiosk use. While playing: velocity ramp-in, and *any* wheel/touch/key input pauses it
+   and hands the scroll back instantly. At the end of the reel it holds, **fades to
+   black, cuts to the top and fades back in** (loop-with-fade) instead of teleporting or
+   resting dead. Teleports (End/Home/anchors/scroll-restore) remain cuts, not rewind
+   sweeps. The control's own `scrollTo(0,0)` is flagged so it never reads as user input.
 8. **Compositing hygiene** (FIX G, #8): `backdrop-filter` removed (solid tint reads the
    same), `body{overflow-x:hidden}` → `html{overflow-x:clip}`, `overscroll-behavior-y:none`,
    `touch-action: pan-y pinch-zoom` on the stage, `contain: layout paint` on the stage.
@@ -146,7 +153,9 @@ already too many opinions).
 - **Desktop, wheel notches:** the film should glide between notches (damping), the top
   progress bar should move without stepping; open `?audit=1` — fps graph green,
   `rAF loops = 2` (engine + diagnostics), `layout reads/frame = 0`, `non-passive LSN = 0`.
-- **Idle 4 s:** autoplay eases in (no lurch); touch the wheel → instant hand-back, no jump.
+- **Press ▶:** the film ramps in and plays; touch the wheel mid-play → it pauses and
+  hands back instantly (button returns to ▶). Let it reach scene 14 → hold, fade out,
+  cut to the top, fade in, continue (loop counter in `?audit=1` JSON).
 - **End key / Home key / reload mid-page:** a cut to the right frame, never a rewind sweep.
 - **DevTools → Network, 4G throttle:** frames arrive progressively; during a fast flick you
   may see the nearest-available frame (slightly soft continuity) but never a blank canvas.
@@ -177,6 +186,34 @@ identical for both engines; `local` = localhost-class network, `4g` = 1.5 Mbps +
 | lag mean / p95 (frames) | 458.7 / 3,745 | **49.9 / 131.9** |
 | peak decoded bitmaps | 799 MB (tab-kill) | **78 MB** |
 | payload in trace | 43.2 MB / 800 req | **9.3 MB / 171 req** |
+
+### v2.1 review round — delivery tiers + opt-in autoplay
+
+Built and measured tiers (same pipeline, different presets):
+
+| set | files | total | avg/frame | used by |
+|---|---|---|---|---|
+| source JPEGs | 4,200 | 239.4 MB | 58 KB | fallback only |
+| `assets/web` WebP q60 @1600 | 2,100 | 112.6 MB | 55 KB | desktop (wide decode support) |
+| `assets/web-avif` AVIF q45 @1600 | 2,100 | **83.2 MB** | 41 KB | desktop (default when present) |
+| `assets/web-m` WebP q55 @960 | 2,100 | **56.7 MB** | 28 KB | phones (cheap transfers *and* cheap decodes) |
+
+Re-runs with the tiers in place (same trace, same harness):
+
+| run | payload in trace | requests | lag mean / p95 | ticks >12 behind | peak bitmaps |
+|---|---|---|---|---|---|
+| desktop / local / v1 | 259.8 MB | 4,727 | 209 / 2,723 | 18.3 % | 799 MB |
+| desktop / local / v2 avif | **25.6 MB** | 654 | **5.1 / 12.6** | **5.4 %** | 459 MB bounded |
+| phone / 4G / v1 | 43.2 MB | 803 | 460 / 3,734 | 71.6 % | 799 MB |
+| phone / 4G / v2 web-m | **4.5 MB** | 149 | **40.2 / 99.5** | **23.5 %** | 71 MB |
+
+Opt-in autoplay, exercised end to end (virtual user presses ▶ at t=32 s, then the film
+plays the whole reel unattended for 183 s): **2 full loop-with-fade cycles**, 12 missed
+frames, lag p95 10.8, 1 long frame, peak bitmaps still bounded at 459 MB — and scroll
+writes now occur *only while the user has asked for the film* (57 in the interactive
+trace vs 1,687 when autoplay self-started in v2.0). Second loop re-requests evicted
+frames in the harness; a real browser serves them byte-free from the immutable HTTP
+cache, so loop cost on device is decode-only.
 
 Checklist re-run on v2: one rAF loop ✔ · passive-only listeners ✔ · damped playhead,
 scroll read once per frame ✔ · refresh-equivalent on resize/fonts/manifest ✔ ·

@@ -66,8 +66,10 @@ async function work(items, fn) {
 }
 
 function manifest_dir_label() {
+  if (opt('dir', '')) return opt('dir', '');
   const rel = path.relative(ROOT, OUT);
-  return rel.startsWith('assets') ? rel.split(path.sep).join('/') : 'assets/web';
+  if (rel.startsWith('assets')) return rel.split(path.sep).join('/');
+  return 'assets/' + path.basename(OUT);   // out-of-repo builds keep their tier name
 }
 
 const t0 = Date.now();

@@ -231,7 +231,12 @@ body {
 @media (max-width: 640px) {
   #scene-info { display: none; }
   #topbar { padding: 16px 18px 10px; }
-  #hint { bottom: 84px; }
+  #hint { bottom: 132px; }
+  #playctl { bottom: 74px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #playctl { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -70,7 +70,7 @@
         preloadAhead: 20,
         preloadBehind: 6,
         crossfade: false,                  // FIX B: halves full-screen blits on weak GPUs
-        autoplay: qs.get('autoplay') === '1',
+        autoplay: qs.get('autoplay') === '1',   // opt-in; the button can still enable it
         smoothing: 8,
         resCap: 1280,                      // FIX B: never render above source/detail need
       };
@@ -85,7 +85,7 @@
       preloadAhead: 36,
       preloadBehind: 10,
       crossfade: true,
-      autoplay: qs.get('autoplay') !== '0',
+      autoplay: qs.get('autoplay') === '1',     // opt-in everywhere now
       smoothing: 10,
       resCap: 1920,
     };
@@ -96,9 +96,9 @@
   const SMOOTHING = reducedMotion ? Infinity : PROFILE.smoothing;
   const CROSSFADE = 14;        // frames of crossfade at scene boundaries
   const FADE_STEPS = 12;       // FIX B: quantise alpha → ≤12 double-blits per boundary
-  const IDLE_DELAY = 4000;     // ms of no input before autoplay kicks in
   const AUTO_RAMP = 1200;      // FIX E: ease autoplay velocity in, never lurch
-  const END_HOLD = 2200;       // ms to hold the last frame before autoplay rests
+  const END_HOLD = 1400;       // ms to hold the last frame before looping
+  const FADE_MS = 600;         // loop-with-fade: dip to black, cut, come back
 
   /* ---------- State ---------- */
   let scenes = [];
@@ -126,11 +126,13 @@
   let metricsDirty = true;
 
   let lastInput = performance.now();
-  let userHasInteracted = false;
+  let autoEnabled = false;     // v2.1: autoplay is OPT-IN via the play control
   let autoActive = false;
   let autoStart = 0;
   let autoScrollY = 0;
   let endHoldUntil = 0;
+  let fadePhase = 0;           // 0 none · 1 fading out · 2 fading in
+  let fadeT = 0;
 
   /* Stats surface for diagnostics.js / performance tests */
   const stats = {
@@ -141,7 +143,7 @@
     cache: { hits: 0, misses: 0, bytes: 0, entries: 0, evicted: 0 },
     layout: { scrollReads: 0, layoutWrites: 0, measures: 0 },
     loop: { frames: 0, longFrames: 0, worst: 0 },
-    autoplay: { active: false, scrolls: 0 },
+    autoplay: { enabled: false, active: false, scrolls: 0, loops: 0 },
   };
 
   const keyOf = (si, f) => si * 1000 + f;           // f = 1-based frame number
@@ -171,9 +173,11 @@
 
   // Passive scroll listener: caches the compositor's scroll offset.
   // Reading window.scrollY here is free (it is not a layout query).
+  let suppressScrollEvent = false;   // our own writes must not read as user input
   window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
     stats.layout.scrollReads++;
+    if (suppressScrollEvent) { suppressScrollEvent = false; return; }
     if (!autoActive) markInput();
   }, { passive: true });
 
@@ -436,11 +440,30 @@
     stats.layout.layoutWrites++;
   }
 
+  /* ---------- Play control (v2.1): the film plays when YOU press play ---------- */
+  const playctl = $('playctl');
+  function setAuto(on) {
+    if (reducedMotion) on = false;
+    autoEnabled = on;
+    stats.autoplay.enabled = on;
+    stopAutoplay();
+    fadePhase = 0;
+    if (playctl) {
+      playctl.classList.toggle('on', on);
+      playctl.setAttribute('aria-pressed', String(on));
+      playctl.setAttribute('aria-label', on ? 'Pause the scroll film' : 'Play the scroll film');
+      playctl.textContent = on ? '❚❚' : '▶';
+    }
+    if (on) { lastInput = performance.now(); endHoldUntil = 0; }
+  }
+  if (playctl) {
+    playctl.addEventListener('click', () => { setAuto(!autoEnabled); lastInput = performance.now(); });
+  }
+
   /* ---------- Input tracking ---------- */
   function markInput() {
     lastInput = performance.now();
-    userHasInteracted = true;
-    if (autoActive) stopAutoplay();
+    if (autoEnabled) setAuto(false);   // grabbing the scroll always wins
   }
   ['wheel', 'touchstart', 'mousedown', 'keydown', 'pointerdown']
     .forEach((ev) => window.addEventListener(ev, markInput, { passive: true }));
@@ -457,14 +480,36 @@
      teleporting the user's scroll position back to 0.
      ============================================================ */
   function autoplayStep(now, dt) {
-    if (reducedMotion || !PROFILE.autoplay) return;
-    const idle = now - lastInput > IDLE_DELAY;
-    if (!idle || !userHasInteracted || document.hidden) { stopAutoplay(); return; }
+    if (reducedMotion || !autoEnabled || document.hidden) return;
+
+    // loop-with-fade: dip to black, cut to the top, come back up
+    if (fadePhase === 1) {
+      fadeT += dt;
+      if (fadeT >= FADE_MS) {
+        suppressScrollEvent = true;
+        window.scrollTo(0, 0);
+        scrollY = 0;
+        playhead = 0;
+        currentGlobal = -1;
+        drawKey = -2;
+        fadePhase = 2;
+        fadeT = 0;
+        stats.autoplay.loops++;
+        autoScrollY = 0;
+        autoStart = now;          // ramp back in gently
+      }
+      return;
+    }
+    if (fadePhase === 2) {
+      fadeT += dt;
+      if (fadeT >= FADE_MS) { fadePhase = 0; drawKey = -2; }
+      return;
+    }
 
     const t = targetFromScroll();
     if (t >= totalFrames - 1.01) {
       if (!endHoldUntil) endHoldUntil = now + END_HOLD;
-      else if (now >= endHoldUntil) stopAutoplay();
+      else if (now >= endHoldUntil) { fadePhase = 1; fadeT = 0; drawKey = -2; }
       return;
     }
     endHoldUntil = 0;
@@ -477,6 +522,7 @@
     const ramp = clamp((now - autoStart) / AUTO_RAMP, 0, 1);
     autoScrollY += (dt / 1000) * fps * pxPerFrame() * easeInOut(ramp);
     const y = Math.min(autoScrollY, maxScroll);
+    // autoActive is true here, so the scroll listener already ignores this
     window.scrollTo(0, y);       // one write per frame, batched with the reads below
     scrollY = y;
     stats.autoplay.scrolls++;
@@ -518,7 +564,14 @@
       updateSceneUI(g);
     }
     updateProgress(g);
+    if (fadePhase) drawKey = -2;                 // fade needs a fresh base each tick
     drawAt(playhead);
+    if (fadePhase) {
+      const a = fadePhase === 1 ? Math.min(1, fadeT / FADE_MS) : 1 - Math.min(1, fadeT / FADE_MS);
+      ctx.fillStyle = `rgba(11, 8, 6, ${a.toFixed(3)})`;
+      ctx.fillRect(0, 0, cw, ch);
+      stats.frames.blits++;
+    }
     requestAnimationFrame(tick);
   }
 
@@ -541,10 +594,12 @@
   /* ---------- Boot ---------- */
   async function boot() {
     let manifest;
-    // lightest available delivery set wins: mobile tier → web tier → source
+    // lightest suitable delivery set wins; manifest.dir/ext describe it
     const sources = coarse
-      ? ['assets/web-m/manifest.json', 'assets/web/manifest.json', 'assets/manifest.json']
-      : ['assets/web/manifest.json', 'assets/manifest.json'];
+      ? ['assets/web-m/manifest.json', 'assets/web-avif/manifest.json',
+         'assets/web/manifest.json', 'assets/manifest.json']
+      : ['assets/web-avif/manifest.json', 'assets/web/manifest.json',
+         'assets/manifest.json'];
     for (const src of sources) {
       try {
         const res = await fetch(src);
@@ -615,6 +670,8 @@
     updateSceneUI(currentGlobal);
     updateProgress(currentGlobal);
     lastInput = performance.now();
+    if (PROFILE.autoplay) setAuto(true);
+    if (playctl) playctl.hidden = reducedMotion;
     requestAnimationFrame(tick);
   }
 

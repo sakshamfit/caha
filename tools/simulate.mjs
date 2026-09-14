@@ -31,6 +31,8 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 
 const FRAMES = process.env.CAHA_SRC_FRAMES || path.join(ROOT, 'assets/frames');
 const WEB = process.env.CAHA_WEB_DIR || path.join(ROOT, 'assets/web');
+const WEBM = process.env.CAHA_WEBM_DIR || path.join(ROOT, 'assets/web-m');
+const WEBAV = process.env.CAHA_WEBAVIF_DIR || path.join(ROOT, 'assets/web-avif');
 const useWeb = ENGINE === 'v2' && fs.existsSync(path.join(WEB, 'manifest.json')) && opt('set', 'web') === 'web';
 const SET_DIR = useWeb ? WEB : FRAMES;
 
@@ -97,8 +99,10 @@ function makeEl(id) {
   const el = {
     id,
     style: makeStyle(),
-    classList: { add() {}, remove() {}, contains: () => false },
+    classList: { add() {}, remove() {}, contains: () => false, toggle() {} },
     remove() {},
+    setAttribute() {},
+    hidden: false,
     textContent: '',
     width: 0, height: 0,
     _listeners: {},
@@ -133,7 +137,9 @@ const fileCache = new Map();
 function resolveFrame(urlPath) {
   let rel = urlPath.replace(/^\//, '');
   let base = ROOT;
-  if (rel.startsWith('assets/web/')) { rel = rel.slice('assets/web/'.length); base = WEB; }
+  if (rel.startsWith('assets/web-m/')) { rel = rel.slice('assets/web-m/'.length); base = WEBM; }
+  else if (rel.startsWith('assets/web-avif/')) { rel = rel.slice('assets/web-avif/'.length); base = WEBAV; }
+  else if (rel.startsWith('assets/web/')) { rel = rel.slice('assets/web/'.length); base = WEB; }
   else if (rel.startsWith('assets/frames/')) { rel = rel.slice('assets/frames/'.length); base = FRAMES; }
   const p = path.join(base, rel);
   if (fileCache.has(p)) return fileCache.get(p);
@@ -326,10 +332,21 @@ let trace = [];
 let traceIdx = 0;
 
 /* ---------------- run ---------------- */
+const SET = opt('set', 'web');
 const chosenManifest = (() => {
-  const tryPaths = ENGINE === 'v2'
-    ? [path.join(WEB, 'manifest.json'), path.join(FRAMES, '..', 'manifest.json')]
-    : [path.join(FRAMES, '..', 'manifest.json')];
+  const all = {
+    webm: path.join(WEBM, 'manifest.json'),
+    avif: path.join(WEBAV, 'manifest.json'),
+    web: path.join(WEB, 'manifest.json'),
+    source: path.join(FRAMES, '..', 'manifest.json'),
+  };
+  const order = ENGINE === 'v1'
+    ? [all.source]
+    : DEVICE === 'mobile'
+      ? [all.webm, all.avif, all.web, all.source]
+      : [all.avif, all.web, all.source];
+  const forced = all[SET];
+  const tryPaths = forced && fs.existsSync(forced) ? [forced] : order;
   for (const p of tryPaths) if (fs.existsSync(p)) return JSON.parse(fs.readFileSync(p, 'utf8'));
   return null;
 })();
@@ -370,6 +387,7 @@ vm.runInContext(src, context, { filename: `app.${ENGINE}.js` });
 
 const END = SECONDS * 1000;
 let prevScrollY = 0;
+let autoClicked = false;
 let lagLastUrl = null, lagDisplayed = -1;
 const lagSeries = [];
 const lagDebug = {};
@@ -380,6 +398,12 @@ while (now < END) {
   // timers
   const due = timers.filter((t) => t.at <= now);
   if (due.length) { timers = timers.filter((t) => t.at > now); for (const t of due.sort((a, b) => a.at - b.at)) t.fn(); }
+  // virtual user presses the play control once (opt-in autoplay path)
+  const ac = +(process.env.AUTOCLICK || 0);
+  if (ac && now >= ac && !autoClicked) {
+    autoClicked = true;
+    for (const f of (elements.playctl && elements.playctl._listeners.click) || []) f();
+  }
   // input events
   while (traceIdx < trace.length && trace[traceIdx].at <= now) {
     const ev = trace[traceIdx++];

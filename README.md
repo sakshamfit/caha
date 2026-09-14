@@ -19,12 +19,14 @@ to the source reel, so `npm run dev` works immediately on a fresh clone that has
 frames. Useful flags:
 
 ```bash
-npm run build:frames -- --format avif --quality 45   # ~40 % smaller, slower encode
-npm run build:frames -- --width 960 --quality 55 --out assets/web-m   # phone tier
+npm run build:frames -- --format avif --quality 45 --out assets/web-avif  # desktop, ~40 % smaller
+npm run build:frames -- --width 960 --quality 55 --out assets/web-m       # phone tier
 ```
 
-The phone tier is picked automatically on coarse pointers; the engine probes
-`assets/web-m/` → `assets/web/` → `assets/frames/`.
+The engine probes lightest-suitable-first and falls back to the source reel:
+phones (`pointer: coarse`) try `assets/web-m/` → `assets/web-avif/` → `assets/web/` →
+`assets/frames/`; desktop tries `assets/web-avif/` → `assets/web/` → `assets/frames/`.
+AVIF wins on bytes for desktop; phones get WebP because cheap SoCs decode it much faster.
 
 Large sets can live outside the repo:
 
@@ -58,6 +60,8 @@ node tools/simulate.mjs --engine v2 --net local --device desktop --set web
   byte-budgeted LRU whose resident window is derived from budget ÷ decoded-frame bytes.
 - **The canvas backing store never exceeds the delivery resolution**; identical frames
   are not re-blitted; crossfade alpha is quantised and mobile skips it.
-- **Autoplay** ramps in after 4 s idle, cancels on any input, rests at the end
-  (`?autoplay=0` disables); teleports are cuts, not rewind sweeps.
+- **Autoplay is opt-in**: the ▶ control (bottom centre) starts the film, any input
+  pauses it and hands the scroll back, and the end of the reel loops with a
+  fade-to-black cut. `?autoplay=1` pre-enables it (kiosks); `prefers-reduced-motion`
+  hides the control entirely. Teleports are cuts, not rewind sweeps.
 - `prefers-reduced-motion` disables autoplay, damping and crossfade.
