@@ -17,6 +17,14 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const PORT = +(process.argv[2] || process.env.PORT || 5173);
 const FRAMES_DIR = process.env.CAHA_SRC_FRAMES || path.join(ROOT, 'assets/frames');
 const WEB_DIR = process.env.CAHA_WEB_DIR || path.join(ROOT, 'assets/web');
+const WEBM_DIR = process.env.CAHA_WEBM_DIR || path.join(ROOT, 'assets/web-m');
+const WEBAV_DIR = process.env.CAHA_WEBAVIF_DIR || path.join(ROOT, 'assets/web-avif');
+const TIERS = [
+  ['assets/web-m', () => WEBM_DIR],
+  ['assets/web-avif', () => WEBAV_DIR],
+  ['assets/web', () => WEB_DIR],
+  ['assets/frames', () => FRAMES_DIR],
+];
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -45,9 +53,13 @@ const server = http.createServer((req, res) => {
 
   // external frame roots
   let file = null;
-  if (pathname.startsWith('/assets/web/')) file = safeJoin(WEB_DIR, pathname.slice('/assets/web/'.length));
-  else if (pathname.startsWith('/assets/frames/')) file = safeJoin(FRAMES_DIR, pathname.slice('/assets/frames/'.length));
-  else file = safeJoin(ROOT, pathname);
+  for (const [prefix, dir] of TIERS) {
+    if (pathname.startsWith('/' + prefix + '/')) {
+      file = safeJoin(dir(), pathname.slice(prefix.length + 2));
+      break;
+    }
+  }
+  if (!file) file = safeJoin(ROOT, pathname);
 
   if (!file || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
     res.writeHead(404, { 'content-type': 'text/plain' });
@@ -69,5 +81,9 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`caha serving on http://0.0.0.0:${PORT}`);
   console.log(`  frames : ${FRAMES_DIR}`);
-  console.log(`  web set: ${fs.existsSync(path.join(WEB_DIR, 'manifest.json')) ? WEB_DIR : '(not built — falling back to source frames)'}${process.env.CAHA_WEB_DIR ? '' : ''}`);
+  for (const [prefix, dir] of TIERS) {
+    const d = dir();
+    const ok = prefix === 'assets/frames' ? true : fs.existsSync(path.join(d, 'manifest.json'));
+    console.log(`  ${prefix.padEnd(15)}: ${ok ? d : '(not built)'}`);
+  }
 });
