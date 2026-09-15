@@ -163,6 +163,33 @@ test('build-frames records how each tier was built', () => {
   assert.match(b, /withoutEnlargement: !NORMALIZE/, 'without --normalize, narrow scenes must not be upscaled');
 });
 
+test('a clean clone is told how to get the frames, not handed an ENOENT', () => {
+  /* assets/frames/ and every built tier (assets/web-*) are gitignored, so a
+     fresh checkout boots to "No frames loaded — N requests failed. Run `npm
+     run build:frames`" — and build:frames used to die on its first
+     readdirSync. Every message in that loop must point at a command that
+     actually works. */
+  const b = read('tools/build-frames.mjs');
+  assert.match(b, /npm run fetch:frames/, 'build-frames must name fetch:frames when the reel is missing');
+  const pkg = json('package.json');
+  for (const s of ['fetch:frames', 'build:tiers', 'setup']) assert.ok(pkg.scripts[s], `package.json needs a "${s}" script`);
+  assert.ok(fs.existsSync(path.join(ROOT, 'tools/fetch-frames.mjs')), 'tools/fetch-frames.mjs must exist');
+  const f = read('tools/fetch-frames.mjs');
+  assert.match(f, /'fetch', '--depth=1'/, 'fetch:frames must be a depth-1 fetch (the reel is 240 MB)');
+  assert.doesNotMatch(f, /'checkout'|'switch'/, 'fetch:frames must never change the checked-out branch');
+  /* the two tiers build:tiers writes are the ones the engine probes first */
+  for (const tier of ['assets/web-avif', 'assets/web-m']) {
+    assert.ok(pkg.scripts['build:tiers'].includes(`--out ${tier}`), `build:tiers must build ${tier}`);
+    assert.ok(app.includes(`'${tier}/manifest.json'`), `the engine must probe ${tier}`);
+  }
+  /* and the message the user actually sees still points at something that exists */
+  assert.match(app, /No frames loaded — \$\{stats\.net\.failed\} requests failed\. Run \\`npm run build:frames\\`/);
+  const ignored = read('.gitignore');
+  for (const d of ['assets/frames/', 'assets/web-avif/', 'assets/web-m/']) {
+    assert.ok(ignored.includes(d), `${d} must stay gitignored — it is generated, not source`);
+  }
+});
+
 test('a frame that was queued but never fetched can be requested again', () => {
   /* enqueue() trusts `requested` ("queued, in flight or resident"), but
      scheduleAround() rebuilds the queue on every playhead step — so a key that

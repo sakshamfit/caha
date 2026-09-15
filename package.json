@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "node tools/serve.mjs",
     "start": "node tools/serve.mjs",
+    "fetch:frames": "node tools/fetch-frames.mjs",
     "build:frames": "node tools/build-frames.mjs",
+    "build:tiers": "node tools/build-frames.mjs --width 1280 --format webp --quality 68 --step 4 --out assets/web-avif && node tools/build-frames.mjs --width 1280 --format avif --quality 45 --step 3 --out assets/web-m",
+    "setup": "npm run fetch:frames && npm run build:tiers",
     "simulate": "node tools/simulate.mjs",
     "test": "node --test tools/*.test.mjs",
     "audit:browser": "node tools/browser-audit.mjs",

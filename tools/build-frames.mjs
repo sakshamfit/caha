@@ -57,7 +57,23 @@ const NORMALIZE = flag('normalize');
 const CONC = +opt('concurrency', Math.max(2, os.cpus().length));
 const ONLY = opt('scenes', '') ? opt('scenes', '').split(',').map((n) => +n) : null;
 
-const manifest = JSON.parse(fs.readFileSync(path.join(SRC, '..', 'manifest.json'), 'utf8'));
+/* The source reel is gitignored (239 MB), so on a clean clone SRC is empty and
+   the first readdirSync used to die with a bare ENOENT stack trace — while the
+   site, one step later, said "No frames loaded — 24 requests failed. Run
+   `npm run build:frames`", pointing straight back here. Say what is actually
+   missing and how to get it. */
+const srcManifest = path.join(SRC, '..', 'manifest.json');
+const firstScene = fs.existsSync(SRC) ? fs.readdirSync(SRC).find((d) => d.startsWith('scene-')) : null;
+if (!firstScene || !fs.existsSync(srcManifest)) {
+  console.error(`build-frames: no source reel at ${SRC}` + (firstScene ? '' : ' (no scene-*/ directories)'));
+  console.error('  The 4,200 source JPEGs are not in this branch. Either fetch them:');
+  console.error('    npm run fetch:frames        # git archive from the branch that carries them');
+  console.error('  or point the build at a copy:');
+  console.error('    CAHA_SRC_FRAMES=/path/to/frames npm run build:frames');
+  process.exit(1);
+}
+
+const manifest = JSON.parse(fs.readFileSync(srcManifest, 'utf8'));
 const pad = (n, w) => String(n).padStart(w, '0');
 
 const enc = (pipe) =>
