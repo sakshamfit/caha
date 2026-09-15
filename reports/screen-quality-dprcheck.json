@@ -1,0 +1,122 @@
+{
+  "tool": "screen-quality",
+  "sets": [
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1920x1200",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.26,
+      "ssim": 0.9443,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 117,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 31.44,
+          "ssim": 0.9687,
+          "vs": null,
+          "shot": "reports/shots/screen-dprcheck-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 132,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 23.53,
+          "ssim": 0.9249,
+          "vs": null,
+          "shot": "reports/shots/screen-dprcheck-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 696,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.55,
+          "ssim": 0.9409,
+          "vs": null,
+          "shot": "reports/shots/screen-dprcheck-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 119,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.34,
+          "ssim": 0.9488,
+          "vs": null,
+          "shot": "reports/shots/screen-dprcheck-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 111,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.44,
+          "ssim": 0.9383,
+          "vs": null,
+          "shot": "reports/shots/screen-dprcheck-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    }
+  ]
+}

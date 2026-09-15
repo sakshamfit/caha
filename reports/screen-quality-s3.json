@@ -1,0 +1,2117 @@
+{
+  "tool": "screen-quality",
+  "sets": [
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "s3",
+      "vsCeilingPsnr": 99,
+      "vsCeilingSsim": 1,
+      "psnr": 22.61,
+      "ssim": 0.8818,
+      "meanFrameBytes": 33478,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 624,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.44,
+          "ssim": 0.8832,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 50,
+            "global": 549
+          },
+          "settleMs": 919,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45486,
+          "psnr": 22.79,
+          "ssim": 0.8297,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 949,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36386,
+          "psnr": 22.4,
+          "ssim": 0.9018,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3325194228635,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 695,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 28406,
+          "psnr": 25.01,
+          "ssim": 0.9041,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 49,
+            "global": 1248
+          },
+          "settleMs": 707,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 23960,
+          "psnr": 19.41,
+          "ssim": 0.8901,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "s3",
+      "vsCeilingPsnr": 99,
+      "vsCeilingSsim": 1,
+      "psnr": 22.84,
+      "ssim": 0.9189,
+      "meanFrameBytes": 43686,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 537,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.72,
+          "ssim": 0.9257,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 701,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 23.99,
+          "ssim": 0.9101,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 572,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.9,
+          "ssim": 0.921,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 735,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 40090,
+          "psnr": 25.14,
+          "ssim": 0.9251,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 855,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.44,
+          "ssim": 0.9124,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "s3",
+      "vsCeilingPsnr": 99,
+      "vsCeilingSsim": 1,
+      "psnr": 22.49,
+      "ssim": 0.9134,
+      "meanFrameBytes": 43686,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 517,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.35,
+          "ssim": 0.9129,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 713,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 23.28,
+          "ssim": 0.8816,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 572,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.67,
+          "ssim": 0.9169,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 738,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 40090,
+          "psnr": 24.77,
+          "ssim": 0.9269,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 861,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.38,
+          "ssim": 0.9287,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "s3",
+      "vsCeilingPsnr": 99,
+      "vsCeilingSsim": 1,
+      "psnr": 22.38,
+      "ssim": 0.8825,
+      "meanFrameBytes": 33478,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 615,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.17,
+          "ssim": 0.878,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 50,
+            "global": 549
+          },
+          "settleMs": 908,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45486,
+          "psnr": 22.51,
+          "ssim": 0.8174,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 934,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36386,
+          "psnr": 22.18,
+          "ssim": 0.9021,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3325194228635,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 685,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 28406,
+          "psnr": 24.68,
+          "ssim": 0.9124,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 49,
+            "global": 1248
+          },
+          "settleMs": 710,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 23960,
+          "psnr": 19.34,
+          "ssim": 0.9028,
+          "vs": {
+            "against": "s3",
+            "psnr": 99,
+            "ssim": 1
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 18.07,
+      "vsCeilingSsim": 0.6024,
+      "psnr": 22.6,
+      "ssim": 0.8817,
+      "meanFrameBytes": 33478,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 622,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.45,
+          "ssim": 0.8832,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.38,
+            "ssim": 0.6515
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 50,
+            "global": 549
+          },
+          "settleMs": 920,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45486,
+          "psnr": 22.75,
+          "ssim": 0.8294,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.09,
+            "ssim": 0.6307
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 950,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36386,
+          "psnr": 22.4,
+          "ssim": 0.9018,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.27,
+            "ssim": 0.5047
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3325194228635,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 689,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 28406,
+          "psnr": 25.01,
+          "ssim": 0.9041,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.54,
+            "ssim": 0.6476
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 49,
+            "global": 1248
+          },
+          "settleMs": 711,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 23960,
+          "psnr": 19.4,
+          "ssim": 0.8902,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.07,
+            "ssim": 0.5776
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 16.82,
+      "vsCeilingSsim": 0.5469,
+      "psnr": 22.83,
+      "ssim": 0.9188,
+      "meanFrameBytes": 43686,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 540,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.72,
+          "ssim": 0.9256,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.35,
+            "ssim": 0.5619
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 713,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 23.98,
+          "ssim": 0.9099,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.81,
+            "ssim": 0.5392
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 572,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.89,
+          "ssim": 0.9209,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 14.54,
+            "ssim": 0.435
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 737,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 40090,
+          "psnr": 25.14,
+          "ssim": 0.9251,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.42,
+            "ssim": 0.6346
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 862,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.44,
+          "ssim": 0.9123,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 15.99,
+            "ssim": 0.5638
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 16.9,
+      "vsCeilingSsim": 0.6634,
+      "psnr": 22.49,
+      "ssim": 0.9134,
+      "meanFrameBytes": 43686,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 531,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.36,
+          "ssim": 0.9129,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.38,
+            "ssim": 0.666
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 707,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 23.27,
+          "ssim": 0.8816,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.99,
+            "ssim": 0.6324
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 583,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.67,
+          "ssim": 0.9169,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 14.6,
+            "ssim": 0.5803
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 737,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 40090,
+          "psnr": 24.77,
+          "ssim": 0.9268,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.49,
+            "ssim": 0.7545
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 865,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.38,
+          "ssim": 0.9287,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.03,
+            "ssim": 0.684
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 18.14,
+      "vsCeilingSsim": 0.7068,
+      "psnr": 22.38,
+      "ssim": 0.8826,
+      "meanFrameBytes": 33478,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 629,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.19,
+          "ssim": 0.8781,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.35,
+            "ssim": 0.7297
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 50,
+            "global": 549
+          },
+          "settleMs": 922,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45486,
+          "psnr": 22.51,
+          "ssim": 0.8174,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.31,
+            "ssim": 0.7036
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 934,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36386,
+          "psnr": 22.18,
+          "ssim": 0.9021,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.33,
+            "ssim": 0.6402
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3325194228635,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 662,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 28406,
+          "psnr": 24.67,
+          "ssim": 0.9124,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.61,
+            "ssim": 0.7652
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 49,
+            "global": 1248
+          },
+          "settleMs": 659,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 23960,
+          "psnr": 19.33,
+          "ssim": 0.9028,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.09,
+            "ssim": 0.6953
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "tier": "assets/web",
+      "dpr": 3,
+      "viewport": "390x844@3",
+      "device": "1170x2532",
+      "backing": "591x1280",
+      "profileResCap": 1280,
+      "samples": 3,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 17.67,
+      "vsCeilingSsim": 0.7874,
+      "psnr": 16.06,
+      "ssim": 0.783,
+      "meanFrameBytes": 29853,
+      "results": [
+        {
+          "scene": 4,
+          "sceneId": "scene-04",
+          "target": 349.75,
+          "shown": {
+            "si": 3,
+            "f": 50,
+            "global": 349
+          },
+          "settleMs": 1358,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 24766,
+          "psnr": 15.7,
+          "ssim": 0.7758,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.71,
+            "ssim": 0.7956
+          },
+          "shot": "reports/shots/screen-s3-mobile-390x844-d3-s4.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5002366863905,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 1291,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 36386,
+          "psnr": 14.61,
+          "ssim": 0.7692,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 15.76,
+            "ssim": 0.7165
+          },
+          "shot": "reports/shots/screen-s3-mobile-390x844-d3-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3332544378698,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 838,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 28406,
+          "psnr": 17.88,
+          "ssim": 0.804,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 20.54,
+            "ssim": 0.8502
+          },
+          "shot": "reports/shots/screen-s3-mobile-390x844-d3-s10.png"
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "tier": "assets/web-m",
+      "dpr": 3,
+      "viewport": "390x844@3",
+      "device": "1170x2532",
+      "backing": "591x1280",
+      "profileResCap": 1280,
+      "samples": 3,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 17.64,
+      "vsCeilingSsim": 0.7828,
+      "psnr": 16.07,
+      "ssim": 0.7921,
+      "meanFrameBytes": 28549,
+      "results": [
+        {
+          "scene": 4,
+          "sceneId": "scene-04",
+          "target": 349.75,
+          "shown": {
+            "si": 3,
+            "f": 50,
+            "global": 349
+          },
+          "settleMs": 1386,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 25690,
+          "psnr": 15.7,
+          "ssim": 0.7892,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.72,
+            "ssim": 0.7923
+          },
+          "shot": "reports/shots/screen-s3-mobile-390x844-d3-s4.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5002366863905,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 1285,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 32246,
+          "psnr": 14.62,
+          "ssim": 0.7759,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 15.71,
+            "ssim": 0.711
+          },
+          "shot": "reports/shots/screen-s3-mobile-390x844-d3-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3332544378698,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 839,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 27712,
+          "psnr": 17.9,
+          "ssim": 0.8112,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 20.49,
+            "ssim": 0.845
+          },
+          "shot": "reports/shots/screen-s3-mobile-390x844-d3-s10.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 18.09,
+      "vsCeilingSsim": 0.6027,
+      "psnr": 22.61,
+      "ssim": 0.8817,
+      "meanFrameBytes": 33478,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 604,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.44,
+          "ssim": 0.8832,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.39,
+            "ssim": 0.6517
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 50,
+            "global": 549
+          },
+          "settleMs": 911,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45486,
+          "psnr": 22.78,
+          "ssim": 0.8297,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.13,
+            "ssim": 0.6314
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 944,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36386,
+          "psnr": 22.4,
+          "ssim": 0.9018,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.28,
+            "ssim": 0.5047
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3325194228635,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 700,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 28406,
+          "psnr": 25.01,
+          "ssim": 0.9041,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.57,
+            "ssim": 0.6482
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 49,
+            "global": 1248
+          },
+          "settleMs": 706,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 23960,
+          "psnr": 19.4,
+          "ssim": 0.8899,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.07,
+            "ssim": 0.5773
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 16.84,
+      "vsCeilingSsim": 0.5473,
+      "psnr": 22.86,
+      "ssim": 0.9189,
+      "meanFrameBytes": 43686,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 536,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.76,
+          "ssim": 0.9259,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.37,
+            "ssim": 0.5625
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 703,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 24.08,
+          "ssim": 0.9103,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.84,
+            "ssim": 0.5402
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 581,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.89,
+          "ssim": 0.9209,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 14.54,
+            "ssim": 0.4351
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 737,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 40090,
+          "psnr": 25.14,
+          "ssim": 0.9251,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.44,
+            "ssim": 0.6351
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 859,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.44,
+          "ssim": 0.9124,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 15.99,
+            "ssim": 0.5636
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 16.91,
+      "vsCeilingSsim": 0.6635,
+      "psnr": 22.5,
+      "ssim": 0.9134,
+      "meanFrameBytes": 43686,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 521,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.39,
+          "ssim": 0.9131,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.39,
+            "ssim": 0.6664
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 714,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 23.28,
+          "ssim": 0.8816,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.05,
+            "ssim": 0.6334
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 580,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.68,
+          "ssim": 0.917,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 14.58,
+            "ssim": 0.5795
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 743,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 40090,
+          "psnr": 24.77,
+          "ssim": 0.9268,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.49,
+            "ssim": 0.7544
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 866,
+          "device": "2880x1800",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.38,
+          "ssim": 0.9287,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.03,
+            "ssim": 0.684
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 18.16,
+      "vsCeilingSsim": 0.707,
+      "psnr": 22.38,
+      "ssim": 0.8826,
+      "meanFrameBytes": 33478,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 610,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.22,
+          "ssim": 0.8782,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.37,
+            "ssim": 0.73
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 50,
+            "global": 549
+          },
+          "settleMs": 920,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45486,
+          "psnr": 22.51,
+          "ssim": 0.8174,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.4,
+            "ssim": 0.7047
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 50,
+            "global": 649
+          },
+          "settleMs": 934,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36386,
+          "psnr": 22.18,
+          "ssim": 0.9021,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.32,
+            "ssim": 0.64
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 949.3325194228635,
+          "shown": {
+            "si": 9,
+            "f": 49,
+            "global": 948
+          },
+          "settleMs": 696,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 28406,
+          "psnr": 24.67,
+          "ssim": 0.9124,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.6,
+            "ssim": 0.7649
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 49,
+            "global": 1248
+          },
+          "settleMs": 710,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 23960,
+          "psnr": 19.34,
+          "ssim": 0.9028,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.09,
+            "ssim": 0.6954
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 16.89,
+      "vsCeilingSsim": 0.5533,
+      "psnr": 22.73,
+      "ssim": 0.9059,
+      "meanFrameBytes": 47052,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 541,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47518,
+          "psnr": 23.62,
+          "ssim": 0.9119,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.42,
+            "ssim": 0.5679
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 707,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 72610,
+          "psnr": 23.64,
+          "ssim": 0.8886,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.95,
+            "ssim": 0.5473
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 569,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 48166,
+          "psnr": 21.87,
+          "ssim": 0.9134,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 14.57,
+            "ssim": 0.4393
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 717,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 37442,
+          "psnr": 25.09,
+          "ssim": 0.9146,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.48,
+            "ssim": 0.6412
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 836,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 29522,
+          "psnr": 19.42,
+          "ssim": 0.9008,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.03,
+            "ssim": 0.5708
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsAgainst": "ceiling",
+      "vsCeilingPsnr": 16.93,
+      "vsCeilingSsim": 0.6668,
+      "psnr": 22.46,
+      "ssim": 0.9058,
+      "meanFrameBytes": 47052,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 530,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47518,
+          "psnr": 23.32,
+          "ssim": 0.9061,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.4,
+            "ssim": 0.6683
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 714,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 72610,
+          "psnr": 23.19,
+          "ssim": 0.8732,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 17.08,
+            "ssim": 0.6355
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 578,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 48166,
+          "psnr": 21.66,
+          "ssim": 0.9131,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 14.6,
+            "ssim": 0.5823
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.82974472808,
+          "shown": {
+            "si": 9,
+            "f": 37,
+            "global": 711
+          },
+          "settleMs": 740,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 37442,
+          "psnr": 24.75,
+          "ssim": 0.9218,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 19.52,
+            "ssim": 0.7587
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 862,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 29522,
+          "psnr": 19.36,
+          "ssim": 0.9148,
+          "vs": {
+            "against": "ceiling",
+            "psnr": 16.05,
+            "ssim": 0.689
+          },
+          "shot": "reports/shots/screen-s3-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,965 @@
+{
+  "tool": "screen-quality",
+  "sets": [
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.78,
+      "ssim": 0.9482,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 133,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 32.38,
+          "ssim": 0.9832,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 118,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 24.42,
+          "ssim": 0.9442,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 655,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.82,
+          "ssim": 0.9451,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 106,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.85,
+          "ssim": 0.9493,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 70,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.45,
+          "ssim": 0.9191,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1024x640@1",
+      "device": "1024x640",
+      "backing": "1024x640",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 21.8,
+      "ssim": 0.9079,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 450.0332293291732,
+          "shown": {
+            "si": 1,
+            "f": 151,
+            "global": 450
+          },
+          "settleMs": 169,
+          "device": "1024x640",
+          "backing": "1024x640",
+          "canvasCss": "1024x640",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 30.46,
+          "ssim": 0.9696,
+          "vs": null
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.4667706708267,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 93,
+          "device": "1024x640",
+          "backing": "1024x640",
+          "canvasCss": "1024x640",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 20.07,
+          "ssim": 0.8889,
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4889235569422,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 675,
+          "device": "1024x640",
+          "backing": "1024x640",
+          "canvasCss": "1024x640",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 19.03,
+          "ssim": 0.8857,
+          "vs": null
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.2278471138843,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 88,
+          "device": "1024x640",
+          "backing": "1024x640",
+          "canvasCss": "1024x640",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 21.67,
+          "ssim": 0.8972,
+          "vs": null
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3748.966770670827,
+          "shown": {
+            "si": 12,
+            "f": 149,
+            "global": 3748
+          },
+          "settleMs": 69,
+          "device": "1024x640",
+          "backing": "1024x640",
+          "canvasCss": "1024x640",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 17.76,
+          "ssim": 0.8982,
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1920x1200",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.28,
+      "ssim": 0.9437,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 94,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 31.44,
+          "ssim": 0.9687,
+          "vs": null
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 128,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 23.61,
+          "ssim": 0.925,
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 665,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.55,
+          "ssim": 0.9407,
+          "vs": null
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 125,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.36,
+          "ssim": 0.9488,
+          "vs": null
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 92,
+          "device": "2880x1800",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.43,
+          "ssim": 0.9352,
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "tier": "assets/web-m",
+      "dpr": 3,
+      "viewport": "390x844@3",
+      "device": "1170x2532",
+      "backing": "591x1280",
+      "profileResCap": 1280,
+      "samples": 3,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 17.55,
+      "ssim": 0.8576,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 4,
+          "sceneId": "scene-04",
+          "target": 1049.75,
+          "shown": {
+            "si": 3,
+            "f": 150,
+            "global": 1049
+          },
+          "settleMs": 85,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": null,
+          "psnr": 20.21,
+          "ssim": 0.9358,
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4292307692308,
+          "shown": {
+            "si": 6,
+            "f": 150,
+            "global": 1949
+          },
+          "settleMs": 84,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": null,
+          "psnr": 14.13,
+          "ssim": 0.8039,
+          "vs": null
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.356923076923,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 86,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": null,
+          "psnr": 18.32,
+          "ssim": 0.8331,
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.78,
+      "ssim": 0.9484,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 118,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 32.38,
+          "ssim": 0.9832,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 126,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 24.43,
+          "ssim": 0.9445,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 688,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.85,
+          "ssim": 0.9456,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 133,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.8,
+          "ssim": 0.9497,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 117,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.46,
+          "ssim": 0.9188,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1920x1200",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.29,
+      "ssim": 0.9445,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 134,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 31.44,
+          "ssim": 0.9687,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 124,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 23.72,
+          "ssim": 0.9256,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 686,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.55,
+          "ssim": 0.9409,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 103,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.33,
+          "ssim": 0.9489,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 109,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.43,
+          "ssim": 0.9383,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "tier": "assets/web",
+      "dpr": 3,
+      "viewport": "390x844@3",
+      "device": "1170x2532",
+      "backing": "591x1280",
+      "profileResCap": 1280,
+      "samples": 3,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 17.62,
+      "ssim": 0.8585,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 4,
+          "sceneId": "scene-04",
+          "target": 1049.75,
+          "shown": {
+            "si": 3,
+            "f": 150,
+            "global": 1049
+          },
+          "settleMs": 126,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": null,
+          "psnr": 20.21,
+          "ssim": 0.9358,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-mobile-390x844-d3-s4.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4292307692308,
+          "shown": {
+            "si": 6,
+            "f": 150,
+            "global": 1949
+          },
+          "settleMs": 104,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": null,
+          "psnr": 14.13,
+          "ssim": 0.8039,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-mobile-390x844-d3-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.356923076923,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 101,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": null,
+          "psnr": 18.53,
+          "ssim": 0.8359,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-mobile-390x844-d3-s10.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.78,
+      "ssim": 0.9484,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 121,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 32.38,
+          "ssim": 0.9832,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 131,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 24.44,
+          "ssim": 0.9446,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 693,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.84,
+          "ssim": 0.9455,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 114,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.79,
+          "ssim": 0.9497,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 109,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.46,
+          "ssim": 0.9188,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d1-s13.png"
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 2,
+      "viewport": "1440x900@2",
+      "device": "2880x1800",
+      "backing": "1920x1200",
+      "profileResCap": 1920,
+      "samples": 5,
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 24.27,
+      "ssim": 0.9444,
+      "meanFrameBytes": null,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 449.95943396226414,
+          "shown": {
+            "si": 1,
+            "f": 150,
+            "global": 449
+          },
+          "settleMs": 134,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 31.44,
+          "ssim": 0.9687,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s2.png"
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 1649.540566037736,
+          "shown": {
+            "si": 5,
+            "f": 150,
+            "global": 1649
+          },
+          "settleMs": 134,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 23.6,
+          "ssim": 0.9251,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s6.png"
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 1949.4358490566037,
+          "shown": {
+            "si": 6,
+            "f": 149,
+            "global": 1948
+          },
+          "settleMs": 690,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 22.55,
+          "ssim": 0.9408,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s7.png"
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 2849.3547169811322,
+          "shown": {
+            "si": 9,
+            "f": 150,
+            "global": 2849
+          },
+          "settleMs": 120,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 25.33,
+          "ssim": 0.9489,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s10.png"
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 3749.0405660377355,
+          "shown": {
+            "si": 12,
+            "f": 150,
+            "global": 3749
+          },
+          "settleMs": 102,
+          "device": "2880x1800",
+          "backing": "1920x1200",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": null,
+          "psnr": 18.43,
+          "ssim": 0.9383,
+          "vs": null,
+          "shot": "reports/shots/screen-ceiling-desktop-1440x900-d2-s13.png"
+        }
+      ]
+    }
+  ]
+}

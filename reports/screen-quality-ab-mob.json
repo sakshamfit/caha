@@ -1,0 +1,161 @@
+{
+  "tool": "screen-quality",
+  "sets": [
+    {
+      "mode": "mobile",
+      "tier": "assets/web-m",
+      "dpr": 3,
+      "viewport": "390x844@3",
+      "device": "1170x2532",
+      "backing": "591x1280",
+      "profileResCap": 1280,
+      "samples": 3,
+      "qs": "smoothing=low",
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 15.66,
+      "ssim": 0.7561,
+      "meanFrameBytes": 34707,
+      "results": [
+        {
+          "scene": 4,
+          "sceneId": "scene-04",
+          "target": 262.25,
+          "shown": {
+            "si": 3,
+            "f": 37,
+            "global": 261
+          },
+          "settleMs": 775,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 30418,
+          "psnr": 15.63,
+          "ssim": 0.7936,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.0091124260355,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 804,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 39074,
+          "psnr": 14.83,
+          "ssim": 0.7789,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.8302958579882,
+          "shown": {
+            "si": 9,
+            "f": 36,
+            "global": 710
+          },
+          "settleMs": 777,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 34628,
+          "psnr": 16.52,
+          "ssim": 0.6957,
+          "qs": "smoothing=low",
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "mobile",
+      "tier": "assets/web-m",
+      "dpr": 3,
+      "viewport": "390x844@3",
+      "device": "1170x2532",
+      "backing": "591x1280",
+      "profileResCap": 1280,
+      "samples": 3,
+      "qs": "smoothing=high",
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 15.68,
+      "ssim": 0.7553,
+      "meanFrameBytes": 34707,
+      "results": [
+        {
+          "scene": 4,
+          "sceneId": "scene-04",
+          "target": 262.25,
+          "shown": {
+            "si": 3,
+            "f": 37,
+            "global": 261
+          },
+          "settleMs": 1900,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 30418,
+          "psnr": 15.7,
+          "ssim": 0.7924,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.0091124260355,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 805,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 39074,
+          "psnr": 14.82,
+          "ssim": 0.7782,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 10,
+          "sceneId": "scene-10",
+          "target": 711.8302958579882,
+          "shown": {
+            "si": 9,
+            "f": 36,
+            "global": 710
+          },
+          "settleMs": 768,
+          "device": "1170x2532",
+          "backing": "591x1280",
+          "canvasCss": "390x844",
+          "resCapNow": 1280,
+          "deliveredBytes": 34628,
+          "psnr": 16.52,
+          "ssim": 0.6953,
+          "qs": "smoothing=high",
+          "vs": null
+        }
+      ]
+    }
+  ]
+}
