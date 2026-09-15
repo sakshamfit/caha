@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caha</title>
+  <meta name="description" content="Caha — a cafe in motion. Scroll to move through the story.">
+  <meta name="theme-color" content="#0b0806">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fixed full-screen stage: the animation canvas -->
+  <div id="stage">
+    <canvas id="frame"></canvas>
+    <div id="vignette"></div>
+  </div>
+
+  <!-- Top chrome -->
+  <div id="progress"><div id="progress-fill"></div></div>
+  <header id="topbar">
+    <span class="brand-small">caha</span>
+    <span id="progress-label">01 / 14</span>
+  </header>
+
+  <!-- Scene info, bottom-left -->
+  <div id="scene-info">
+    <span id="scene-index">01</span>
+    <span id="scene-title">Scene 01</span>
+  </div>
+
+  <!-- Play control, bottom-center: the film plays when you ask it to -->
+  <button id="playctl" type="button" aria-pressed="false" aria-label="Play the scroll film">▶</button>
+
+  <!-- Scroll hint, bottom-center -->
+  <div id="hint">
+    <span>scroll</span>
+    <span class="chev"></span>
+  </div>
+
+  <!-- Brand wordmark, bottom-right — sits over the watermark corner -->
+  <div id="wordmark">Caha</div>
+
+  <!-- Loading screen -->
+  <div id="loader">
+    <div class="loader-brand">Caha</div>
+    <div class="loader-bar"><div id="loader-fill"></div></div>
+    <div id="loader-pct">0%</div>
+  </div>
+
+  <!-- Invisible element that creates the scrollable length -->
+  <div id="spacer" aria-hidden="true"></div>
+
+  <noscript>
+    <div style="position:fixed;inset:0;display:grid;place-items:center;background:#0b0806;color:#f4ead9;font-family:Georgia,serif;padding:2rem;text-align:center">
+      Caha is a scroll-driven film — it needs JavaScript to play.
+    </div>
+  </noscript>
+
+  <script src="app.js"></script>
+  <!-- audit harness: no-op unless ?audit=1 (or Ctrl+Shift+A) -->
+  <script src="diagnostics.js" defer></script>
+</body>
+</html>

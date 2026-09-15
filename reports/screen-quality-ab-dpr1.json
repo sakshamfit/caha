@@ -1,0 +1,397 @@
+{
+  "tool": "screen-quality",
+  "sets": [
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 4,
+      "qs": "smoothing=low",
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 21.76,
+      "ssim": 0.8756,
+      "meanFrameBytes": 34960,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 588,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.46,
+          "ssim": 0.8832,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 49,
+            "global": 548
+          },
+          "settleMs": 689,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45618,
+          "psnr": 22.85,
+          "ssim": 0.8295,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 49,
+            "global": 648
+          },
+          "settleMs": 539,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36638,
+          "psnr": 21.81,
+          "ssim": 0.9009,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 50,
+            "global": 1249
+          },
+          "settleMs": 98,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 24432,
+          "psnr": 18.91,
+          "ssim": 0.8889,
+          "qs": "smoothing=low",
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1280x800",
+      "profileResCap": 1920,
+      "samples": 4,
+      "qs": "smoothing=high",
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 21.79,
+      "ssim": 0.8767,
+      "meanFrameBytes": 34960,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 149.91503884572697,
+          "shown": {
+            "si": 1,
+            "f": 50,
+            "global": 149
+          },
+          "settleMs": 590,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 33150,
+          "psnr": 23.46,
+          "ssim": 0.8843,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 549.5849611542731,
+          "shown": {
+            "si": 5,
+            "f": 49,
+            "global": 548
+          },
+          "settleMs": 693,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 45618,
+          "psnr": 22.96,
+          "ssim": 0.8319,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 649.5024417314096,
+          "shown": {
+            "si": 6,
+            "f": 49,
+            "global": 648
+          },
+          "settleMs": 534,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 36638,
+          "psnr": 21.81,
+          "ssim": 0.9012,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 1249.084961154273,
+          "shown": {
+            "si": 12,
+            "f": 50,
+            "global": 1249
+          },
+          "settleMs": 92,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 24432,
+          "psnr": 18.91,
+          "ssim": 0.8896,
+          "qs": "smoothing=high",
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 4,
+      "qs": "smoothing=low",
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 22.3,
+      "ssim": 0.9171,
+      "meanFrameBytes": 44585,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 482,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.75,
+          "ssim": 0.9256,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 678,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 24.1,
+          "ssim": 0.9101,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 563,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.89,
+          "ssim": 0.9208,
+          "qs": "smoothing=low",
+          "vs": null
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 126,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.44,
+          "ssim": 0.9119,
+          "qs": "smoothing=low",
+          "vs": null
+        }
+      ]
+    },
+    {
+      "mode": "desktop",
+      "tier": "assets/web-avif",
+      "dpr": 1,
+      "viewport": "1440x900@1",
+      "device": "1440x900",
+      "backing": "1440x900",
+      "profileResCap": 1920,
+      "samples": 4,
+      "qs": "smoothing=high",
+      "vsCeilingPsnr": null,
+      "vsCeilingSsim": null,
+      "psnr": 22.3,
+      "ssim": 0.9179,
+      "meanFrameBytes": 44585,
+      "results": [
+        {
+          "scene": 2,
+          "sceneId": "scene-02",
+          "target": 112.40948945615982,
+          "shown": {
+            "si": 1,
+            "f": 37,
+            "global": 111
+          },
+          "settleMs": 468,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47060,
+          "psnr": 23.76,
+          "ssim": 0.9266,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 6,
+          "sceneId": "scene-06",
+          "target": 412.0905105438402,
+          "shown": {
+            "si": 5,
+            "f": 37,
+            "global": 411
+          },
+          "settleMs": 659,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 61375,
+          "psnr": 24.12,
+          "ssim": 0.912,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 7,
+          "sceneId": "scene-07",
+          "target": 487.01076581576024,
+          "shown": {
+            "si": 6,
+            "f": 37,
+            "global": 486
+          },
+          "settleMs": 544,
+          "device": "1440x900",
+          "backing": "1440x900",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 47797,
+          "psnr": 21.89,
+          "ssim": 0.9208,
+          "qs": "smoothing=high",
+          "vs": null
+        },
+        {
+          "scene": 13,
+          "sceneId": "scene-13",
+          "target": 936.5905105438401,
+          "shown": {
+            "si": 12,
+            "f": 37,
+            "global": 936
+          },
+          "settleMs": 128,
+          "device": "1440x900",
+          "backing": "1280x800",
+          "canvasCss": "1440x900",
+          "resCapNow": 1920,
+          "deliveredBytes": 22109,
+          "psnr": 19.44,
+          "ssim": 0.9124,
+          "qs": "smoothing=high",
+          "vs": null
+        }
+      ]
+    }
+  ]
+}

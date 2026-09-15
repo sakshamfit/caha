@@ -1,0 +1,705 @@
+{
+  "engine": "v2",
+  "label": "fixz2",
+  "at": "2026-09-15T12:54:03.639Z",
+  "results": [
+    {
+      "name": "desktop/wheel",
+      "device": "desktop",
+      "engine": "v2",
+      "ticks": 157,
+      "blink": {
+        "layoutCount": 16,
+        "recalcStyleCount": 347,
+        "layoutMs": 6.4,
+        "recalcStyleMs": 8.7,
+        "scriptMs": 51.6,
+        "taskMs": 3127.8,
+        "layoutPerTick": 0.0209,
+        "recalcPerTick": 0.453,
+        "scriptMsPerTick": 0.067,
+        "heapMB": 1.8
+      },
+      "rafLoops": 1,
+      "nonPassive": 0,
+      "nonPassiveSample": [],
+      "longTasks": {
+        "count": 0,
+        "worstMs": 0
+      },
+      "profile": "desktop",
+      "engineStats": {
+        "drawn": 222,
+        "missed": 22,
+        "approx": 100,
+        "blits": 233,
+        "blitsPerDraw": 1.05,
+        "cacheMB": 383.2,
+        "cacheEntries": 109,
+        "evicted": 528,
+        "netMB": 35.66,
+        "netReq": 637,
+        "netFailed": 0,
+        "scrollReads": 28,
+        "layoutWrites": 253,
+        "measures": 1,
+        "loopFrames": 766,
+        "longFrames": 7,
+        "worstFrameMs": 50,
+        "autoplayScrolls": 0,
+        "autoplayLoops": 0,
+        "measuresPerTick": 0.0013
+      },
+      "scrollRange": [
+        0,
+        15677
+      ],
+      "sampleCount": 626,
+      "lag": {
+        "targetToShown": {
+          "mean": 12.86,
+          "p95": 65.88,
+          "max": 184.88
+        },
+        "playheadToShown": {
+          "mean": 1.68,
+          "p95": 4.62,
+          "max": 38.75
+        },
+        "dampLag": {
+          "mean": 11.24,
+          "p95": 61.5,
+          "max": 182.94
+        },
+        "over12pct": 16.2
+      },
+      "jitter": {
+        "mean": 5.49,
+        "p95": 25,
+        "max": 52
+      },
+      "seeks": [
+        {
+          "at": 8035,
+          "convergenceMs": 268,
+          "ticks": 4,
+          "converged": true
+        },
+        {
+          "at": 9818,
+          "convergenceMs": 267,
+          "ticks": 4,
+          "converged": true
+        },
+        {
+          "at": 11469,
+          "convergenceMs": 134,
+          "ticks": 2,
+          "converged": true
+        },
+        {
+          "at": 13752,
+          "convergenceMs": 338,
+          "ticks": 5,
+          "converged": true
+        }
+      ],
+      "motion": {
+        "movingTicks": 21,
+        "drawnTicks": 20,
+        "noDrawPct": 4.8,
+        "approxPct": 42.9,
+        "framesPerMovingTick": 46.38
+      },
+      "dom": {
+        "htmlOverflow": "clip/visible",
+        "canvasBacking": "1280x800",
+        "canvasCSS": "1440x900",
+        "stagePosition": "fixed",
+        "dpr": 1,
+        "scrollHeight": 18920,
+        "innerHeight": 900
+      },
+      "log": [],
+      "accuracy": [
+        {
+          "frac": 0.08,
+          "expected": 84,
+          "shown": 84,
+          "best": {
+            "d": 3,
+            "mae": 14.6
+          },
+          "spread": [
+            {
+              "d": 3,
+              "mae": 14.6
+            },
+            {
+              "d": 2,
+              "mae": 14.77
+            },
+            {
+              "d": 1,
+              "mae": 15.45
+            },
+            {
+              "d": 0,
+              "mae": 16.27
+            },
+            {
+              "d": -1,
+              "mae": 17.67
+            },
+            {
+              "d": -2,
+              "mae": 18.8
+            },
+            {
+              "d": -3,
+              "mae": 20.07
+            }
+          ]
+        },
+        {
+          "frac": 0.33,
+          "expected": 346,
+          "shown": 345,
+          "best": {
+            "d": 1,
+            "mae": 17.78
+          },
+          "spread": [
+            {
+              "d": 1,
+              "mae": 17.78
+            },
+            {
+              "d": 0,
+              "mae": 17.84
+            },
+            {
+              "d": 2,
+              "mae": 17.95
+            },
+            {
+              "d": 3,
+              "mae": 18.52
+            },
+            {
+              "d": -1,
+              "mae": 18.98
+            },
+            {
+              "d": -2,
+              "mae": 20.19
+            },
+            {
+              "d": -3,
+              "mae": 22.85
+            }
+          ]
+        },
+        {
+          "frac": 0.61,
+          "expected": 640,
+          "shown": 639,
+          "best": {
+            "d": -1,
+            "mae": 18.69
+          },
+          "spread": [
+            {
+              "d": -1,
+              "mae": 18.69
+            },
+            {
+              "d": 0,
+              "mae": 20.31
+            },
+            {
+              "d": -2,
+              "mae": 23.57
+            },
+            {
+              "d": 1,
+              "mae": 27.82
+            },
+            {
+              "d": -3,
+              "mae": 32.14
+            },
+            {
+              "d": 2,
+              "mae": 32.26
+            },
+            {
+              "d": 3,
+              "mae": 35.61
+            }
+          ]
+        },
+        {
+          "frac": 0.87,
+          "expected": 913,
+          "shown": 912,
+          "best": {
+            "d": 0,
+            "mae": 17.21
+          },
+          "spread": [
+            {
+              "d": 0,
+              "mae": 17.21
+            },
+            {
+              "d": 1,
+              "mae": 17.96
+            },
+            {
+              "d": -1,
+              "mae": 18.72
+            },
+            {
+              "d": 2,
+              "mae": 19.36
+            },
+            {
+              "d": -2,
+              "mae": 22.74
+            },
+            {
+              "d": 3,
+              "mae": 22.77
+            },
+            {
+              "d": -3,
+              "mae": 26.23
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "name": "one animation loop (#12)",
+          "pass": true,
+          "value": 1,
+          "na": false
+        },
+        {
+          "name": "no non-passive listeners (#11)",
+          "pass": true,
+          "value": 0,
+          "na": false
+        },
+        {
+          "name": "Blink layout < 0.05/frame (#5)",
+          "pass": true,
+          "value": 0.0209,
+          "na": false
+        },
+        {
+          "name": "script < 2 ms/frame",
+          "pass": true,
+          "value": 0.067,
+          "na": false
+        },
+        {
+          "name": "long tasks < 10",
+          "pass": true,
+          "value": "0 (worst 0 ms)",
+          "na": false
+        },
+        {
+          "name": "no backdrop-filter (#6)",
+          "pass": true,
+          "na": false
+        },
+        {
+          "name": "html overflow not hidden (#8)",
+          "pass": true,
+          "value": "clip/visible",
+          "na": false
+        },
+        {
+          "name": "no engine layout reads (#5/#7)",
+          "pass": true,
+          "value": 0.0013,
+          "na": false
+        },
+        {
+          "name": "bitmap cache within budget (#10)",
+          "pass": true,
+          "value": "383.2/384 MB",
+          "na": false
+        },
+        {
+          "name": "p95 starvation ≤ 10 frames (#4)",
+          "pass": true,
+          "value": 4.62,
+          "na": false
+        },
+        {
+          "name": "picture advances while scrubbing",
+          "pass": true,
+          "value": 46.38,
+          "na": false
+        }
+      ]
+    },
+    {
+      "name": "desktop/wheel-4x",
+      "device": "desktop",
+      "engine": "v2",
+      "ticks": 76,
+      "blink": {
+        "layoutCount": 4,
+        "recalcStyleCount": 219,
+        "layoutMs": 0.7,
+        "recalcStyleMs": 23.7,
+        "scriptMs": 118.7,
+        "taskMs": 2870.5,
+        "layoutPerTick": 0.0088,
+        "recalcPerTick": 0.4813,
+        "scriptMsPerTick": 0.261,
+        "heapMB": -1.6
+      },
+      "rafLoops": 1,
+      "nonPassive": 0,
+      "nonPassiveSample": [],
+      "longTasks": {
+        "count": 0,
+        "worstMs": 0
+      },
+      "profile": "desktop",
+      "engineStats": {
+        "drawn": 118,
+        "missed": 3,
+        "approx": 31,
+        "blits": 127,
+        "blitsPerDraw": 1.08,
+        "cacheMB": 383.2,
+        "cacheEntries": 109,
+        "evicted": 153,
+        "netMB": 14.99,
+        "netReq": 262,
+        "netFailed": 0,
+        "scrollReads": 24,
+        "layoutWrites": 119,
+        "measures": 1,
+        "loopFrames": 455,
+        "longFrames": 11,
+        "worstFrameMs": 50,
+        "autoplayScrolls": 0,
+        "autoplayLoops": 0,
+        "measuresPerTick": 0.0022
+      },
+      "scrollRange": [
+        0,
+        4680
+      ],
+      "sampleCount": 301,
+      "lag": {
+        "targetToShown": {
+          "mean": 5.36,
+          "p95": 22.64,
+          "max": 33.47
+        },
+        "playheadToShown": {
+          "mean": 1.73,
+          "p95": 11.66,
+          "max": 12.92
+        },
+        "dampLag": {
+          "mean": 3.78,
+          "p95": 16.63,
+          "max": 21.81
+        },
+        "over12pct": 13.2
+      },
+      "jitter": {
+        "mean": 4.07,
+        "p95": 9,
+        "max": 16
+      },
+      "seeks": [],
+      "motion": {
+        "movingTicks": 18,
+        "drawnTicks": 18,
+        "noDrawPct": 0,
+        "approxPct": 33.3,
+        "framesPerMovingTick": 14
+      },
+      "dom": {
+        "htmlOverflow": "clip/visible",
+        "canvasBacking": "1280x800",
+        "canvasCSS": "1440x900",
+        "stagePosition": "fixed",
+        "dpr": 1,
+        "scrollHeight": 18920,
+        "innerHeight": 900
+      },
+      "log": [],
+      "accuracy": null,
+      "checks": [
+        {
+          "name": "one animation loop (#12)",
+          "pass": true,
+          "value": 1,
+          "na": false
+        },
+        {
+          "name": "no non-passive listeners (#11)",
+          "pass": true,
+          "value": 0,
+          "na": false
+        },
+        {
+          "name": "Blink layout < 0.05/frame (#5)",
+          "pass": true,
+          "value": 0.0088,
+          "na": false
+        },
+        {
+          "name": "script < 2 ms/frame",
+          "pass": true,
+          "value": 0.261,
+          "na": false
+        },
+        {
+          "name": "long tasks < 10",
+          "pass": true,
+          "value": "0 (worst 0 ms)",
+          "na": false
+        },
+        {
+          "name": "no backdrop-filter (#6)",
+          "pass": true,
+          "na": false
+        },
+        {
+          "name": "html overflow not hidden (#8)",
+          "pass": true,
+          "value": "clip/visible",
+          "na": false
+        },
+        {
+          "name": "no engine layout reads (#5/#7)",
+          "pass": true,
+          "value": 0.0022,
+          "na": false
+        },
+        {
+          "name": "bitmap cache within budget (#10)",
+          "pass": true,
+          "value": "383.2/384 MB",
+          "na": false
+        },
+        {
+          "name": "p95 starvation ≤ 10 frames (#4)",
+          "pass": false,
+          "value": 11.66,
+          "na": false
+        },
+        {
+          "name": "picture advances while scrubbing",
+          "pass": true,
+          "value": 14,
+          "na": false
+        }
+      ]
+    },
+    {
+      "name": "desktop/teleport",
+      "device": "desktop",
+      "engine": "v2",
+      "ticks": 34,
+      "blink": {
+        "layoutCount": 8,
+        "recalcStyleCount": 155,
+        "layoutMs": 1.1,
+        "recalcStyleMs": 3.5,
+        "scriptMs": 10.7,
+        "taskMs": 321,
+        "layoutPerTick": 0.0279,
+        "recalcPerTick": 0.5401,
+        "scriptMsPerTick": 0.037,
+        "heapMB": -1
+      },
+      "rafLoops": 1,
+      "nonPassive": 0,
+      "nonPassiveSample": [],
+      "longTasks": {
+        "count": 0,
+        "worstMs": 0
+      },
+      "profile": "desktop",
+      "engineStats": {
+        "drawn": 100,
+        "missed": 16,
+        "approx": 86,
+        "blits": 100,
+        "blitsPerDraw": 1,
+        "cacheMB": 383.2,
+        "cacheEntries": 109,
+        "evicted": 151,
+        "netMB": 16.29,
+        "netReq": 260,
+        "netFailed": 0,
+        "scrollReads": 18,
+        "layoutWrites": 125,
+        "measures": 1,
+        "loopFrames": 287,
+        "longFrames": 2,
+        "worstFrameMs": 50,
+        "autoplayScrolls": 0,
+        "autoplayLoops": 0,
+        "measuresPerTick": 0.0035
+      },
+      "scrollRange": [
+        0,
+        18020
+      ],
+      "sampleCount": 133,
+      "lag": {
+        "targetToShown": {
+          "mean": 157.53,
+          "p95": 362,
+          "max": 362
+        },
+        "playheadToShown": {
+          "mean": 1.56,
+          "p95": 4.9,
+          "max": 4.9
+        },
+        "dampLag": {
+          "mean": 156.05,
+          "p95": 360.17,
+          "max": 360.17
+        },
+        "over12pct": 58.8
+      },
+      "jitter": {
+        "mean": 2.15,
+        "p95": 5,
+        "max": 5
+      },
+      "seeks": [
+        {
+          "at": 3233,
+          "convergenceMs": 401,
+          "ticks": 6,
+          "converged": true
+        },
+        {
+          "at": 4167,
+          "convergenceMs": 733,
+          "ticks": 11,
+          "converged": true
+        }
+      ],
+      "motion": {
+        "movingTicks": 1,
+        "drawnTicks": 1,
+        "noDrawPct": 0,
+        "approxPct": 100,
+        "framesPerMovingTick": 728
+      },
+      "dom": {
+        "htmlOverflow": "clip/visible",
+        "canvasBacking": "1280x800",
+        "canvasCSS": "1440x900",
+        "stagePosition": "fixed",
+        "dpr": 1,
+        "scrollHeight": 18920,
+        "innerHeight": 900
+      },
+      "log": [
+        {
+          "teleport": {
+            "before": {
+              "y": 0,
+              "ph": 0
+            },
+            "end": {
+              "y": 18020,
+              "ph": 756.9279913844242
+            },
+            "home": {
+              "y": 0,
+              "ph": 6.733203245598251
+            }
+          }
+        }
+      ],
+      "accuracy": null,
+      "checks": [
+        {
+          "name": "one animation loop (#12)",
+          "pass": true,
+          "value": 1,
+          "na": false
+        },
+        {
+          "name": "no non-passive listeners (#11)",
+          "pass": true,
+          "value": 0,
+          "na": false
+        },
+        {
+          "name": "Blink layout < 0.05/frame (#5)",
+          "pass": true,
+          "value": 0.0279,
+          "na": false
+        },
+        {
+          "name": "script < 2 ms/frame",
+          "pass": true,
+          "value": 0.037,
+          "na": false
+        },
+        {
+          "name": "long tasks < 10",
+          "pass": true,
+          "value": "0 (worst 0 ms)",
+          "na": false
+        },
+        {
+          "name": "no backdrop-filter (#6)",
+          "pass": true,
+          "na": false
+        },
+        {
+          "name": "html overflow not hidden (#8)",
+          "pass": true,
+          "value": "clip/visible",
+          "na": false
+        },
+        {
+          "name": "no engine layout reads (#5/#7)",
+          "pass": true,
+          "value": 0.0035,
+          "na": false
+        },
+        {
+          "name": "bitmap cache within budget (#10)",
+          "pass": true,
+          "value": "383.2/384 MB",
+          "na": false
+        },
+        {
+          "name": "p95 starvation ≤ 10 frames (#4)",
+          "pass": true,
+          "value": 4.9,
+          "na": false
+        },
+        {
+          "name": "picture advances while scrubbing",
+          "pass": true,
+          "value": 728,
+          "na": false
+        }
+      ]
+    }
+  ]
+}

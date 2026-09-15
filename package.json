@@ -1,0 +1,21 @@
+{
+  "name": "caha",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Caha \u2014 a cafe in motion. Scroll-scrubbed frame animation.",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "start": "node tools/serve.mjs",
+    "build:frames": "node tools/build-frames.mjs",
+    "simulate": "node tools/simulate.mjs",
+    "test": "node --test tools/*.test.mjs",
+    "audit:browser": "node tools/browser-audit.mjs",
+    "audit:sim": "node tools/simulate.mjs"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "^153.0.0",
+    "puppeteer-core": "^24.0.0",
+    "sharp": "^0.35.4"
+  }
+}
