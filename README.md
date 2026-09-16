@@ -20,25 +20,37 @@ are named with their cause in AUDIT.md.
 
 ```bash
 npm i                       # sharp (frames) + puppeteer-core/@sparticuz/chromium (audit)
-npm run build:frames        # assets/frames (239 MB JPEGs) → assets/web (WebP tier)
+npm run setup               # = fetch:frames + build:tiers (≈12 min on 2 cores, once)
 npm run dev                 # http://localhost:5173
 ```
 
-`build:frames` is incremental and skippable: with no `assets/web/` the engine falls back
-to the source reel, so `npm run dev` works immediately on a checkout that has the frames.
-
-The frames are large and are **not** in this branch's history. Either fetch them from the
-branch that carries them, or point the tooling at a copy:
+The frames are large and are **not** in this branch's history: `assets/frames/` (the 239 MB
+source reel) and every `assets/web*/` tier are gitignored, so a fresh clone has only
+`assets/manifest.json`. That is what **"No frames loaded — 24 requests failed"** means: the
+engine fell through every tier probe to the source reel and found nothing there either (24 is
+the desktop warm-up on a 2-core box). Recover in two steps:
 
 ```bash
-git archive origin/arena/01a09a10-caha assets/frames assets/manifest.json | tar -x -C /tmp/caha
-CAHA_SRC_FRAMES=/tmp/caha/assets/frames npm run dev
+npm run fetch:frames        # git archive of the branch that carries the reel → assets/frames
+npm run build:tiers         # the two measured tiers the site ships (web-avif + web-m)
+```
+
+`fetch:frames` does a depth-1 fetch of `origin/arena/01a09a10-caha` to `FETCH_HEAD` and
+extracts from it — it never switches or creates a branch. `build:frames` is incremental and
+skippable: with no built tier the engine falls back to the source reel, so `npm run dev` works
+as soon as the frames are present. If the reel already lives somewhere else, point the tooling
+at it instead:
+
+```bash
+CAHA_SRC_FRAMES=/path/to/frames npm run build:tiers
+CAHA_SRC_FRAMES=/path/to/frames npm run dev
 ```
 
 Useful flags:
 
 ```bash
-# the two tiers this branch ships (settings measured in AUDIT.md, not guessed)
+# the two tiers this branch ships (settings measured in AUDIT.md, not guessed) — this is
+# exactly what `npm run build:tiers` runs
 npm run build:frames -- --width 1280 --format webp --quality 68 --step 4 --out assets/web-avif
 npm run build:frames -- --width 1280 --format avif --quality 45 --step 3 --out assets/web-m
 
