@@ -2,10 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.log
-# Source frames are 239 MB of JPEGs; keep them out of the working tree.
-# tools/build-frames.mjs reads them from CAHA_SRC_FRAMES and writes the
-# optimised web set that actually ships.
-assets/frames/
+# Built web tiers are generated from the source reel and are not committed.
 # (gitignore has no trailing comments: the comment must be on its own line)
 assets/web/
 assets/web-1600/
