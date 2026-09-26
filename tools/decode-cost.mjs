@@ -67,7 +67,7 @@ const main = async () => {
   const browser = await launch();
   try {
     const page = await browser.newPage();
-    await page.goto(`http://127.0.0.1:${port}/index.html`, { waitUntil: 'domcontentloaded' });
+    await page.goto(`http://127.0.0.1:${port}/film.html`, { waitUntil: 'domcontentloaded' });
     console.log(`\ncaha decode cost · chromium ${await browser.version()} · ${os.cpus().length} cpus\n`);
     console.log('tier                 frames  MPix    kB/f  fetch ms  decode ms (med/p95)  bytes/frame');
     for (const tier of TIERS) {

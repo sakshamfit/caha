@@ -235,7 +235,7 @@ const main = async () => {
         Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => 8 });
       });
     }
-    const url = `http://127.0.0.1:${port}/?audit=1${QS ? '&' + QS : ''}`;
+    const url = `http://127.0.0.1:${port}/film.html?audit=1${QS ? '&' + QS : ''}`;
     await page.goto(url, { waitUntil: 'load' });
     await page.waitForFunction('window.__caha && window.__caha.debug().shown', { timeout: 60000 });
     await page.addStyleTag({ content: HIDE_UI });

@@ -3,64 +3,570 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caha</title>
-  <meta name="description" content="Caha — a cafe in motion. Scroll to move through the story.">
-  <meta name="theme-color" content="#0b0806">
+  <title>cahā — The Coffee Club</title>
+  <meta name="description" content="cahā — The Coffee Club. Espresso, fresh bakes and an all-day kitchen across two warm floors and an open-air terrace. Scroll to walk in.">
+  <meta name="theme-color" content="#0e0a07">
   <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="cahā — The Coffee Club">
+  <meta property="og:description" content="Come for the coffee, stay for the light. Scroll to walk in.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <!-- Fixed full-screen stage: the animation canvas -->
-  <div id="stage">
-    <canvas id="frame"></canvas>
-    <div id="vignette"></div>
+  <!-- self-hosted fonts (assets/fonts): nothing third-party can hold back the first paint or the scripts -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-latin-500.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-macron-500.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-display-latin-500.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-wght.woff2" crossorigin>
+  <link rel="stylesheet" href="site/site.css">
+
+  <!-- the hero's first frame is the first thing on screen: fetch it before the scripts run -->
+  <link rel="preload" as="image" href="assets/frames/scene-01/ezgif-frame-001.jpg" fetchpriority="high">
+
+  <script>
+    // JS is on: show the preloader and hold .reveal content for its entrance.
+    // If site.js never runs (blocked/failed), release the content after 5 s.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__cahaSite) document.documentElement.classList.add('no-reveal'); }, 5000);
+  </script>
+</head>
+<body id="top">
+
+  <!-- ── Preloader ─────────────────────────────────────────────── -->
+  <div class="preloader" id="preloader" role="status" aria-label="Loading cahā">
+    <div class="preloader__glow" aria-hidden="true"></div>
+    <span class="preloader__rule" aria-hidden="true"></span>
+    <p class="preloader__brand">cahā</p>
+    <span class="preloader__divider" aria-hidden="true"></span>
+    <p class="preloader__sub">The Coffee Club</p>
+    <div class="preloader__bar" aria-hidden="true"><span id="preloader-fill"></span></div>
+    <p class="preloader__label">Brewing</p>
   </div>
 
-  <!-- Top chrome -->
-  <div id="progress"><div id="progress-fill"></div></div>
-  <header id="topbar">
-    <span class="brand-small">caha</span>
-    <span id="progress-label">01 / 14</span>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ── Nav ───────────────────────────────────────────────────── -->
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" aria-label="cahā — The Coffee Club, back to the top">
+      <span class="brandmark">cahā</span>
+      <span class="nav__tag">The Coffee Club</span>
+    </a>
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a href="#arrival">Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#space">The Space</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav__end">
+      <a class="btn btn--brass btn--sm" href="#reserve"><span>Reserve<span class="hide-sm"> a Table</span></span></a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Scene info, bottom-left -->
-  <div id="scene-info">
-    <span id="scene-index">01</span>
-    <span id="scene-title">Scene 01</span>
+  <main>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         CHAPTER I — Arrival  (scenes 01–04) · the hero
+         A chapter is the reference's ScrollCanvas: a tall container, a
+         sticky stage with a canvas, beats shown over a frame range.
+         data-from / data-to are SOURCE frame numbers (1–300) of data-scene.
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="chapter chapter--hero" id="arrival" data-chapter
+             data-scenes="scene-01 scene-02 scene-03 scene-04" style="--scenes: 4"
+             aria-label="Chapter one: Arrival">
+      <div class="chapter__stage">
+        <canvas class="chapter__canvas" role="img"
+                aria-label="Film: the cahā building at golden hour, the backlit sign, the steps and the glass doors, then inside"></canvas>
+        <div class="chapter__shade chapter__shade--left" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--right" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--bottom" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--top" aria-hidden="true"></div>
+
+        <div class="chapter__ui">
+          <!-- hero overlay — fades out as the scroll starts (reference: end "8% top") -->
+          <div class="hero" data-fade-out="0.5">
+            <div class="hero__eyebrow"><span class="hero__line"></span><p>The Coffee Club</p></div>
+            <h1 class="hero__title">Come for the coffee,<br>stay for the <em>light</em>.</h1>
+            <span class="hero__rule" aria-hidden="true"></span>
+            <p class="hero__sub">Espresso, fresh bakes and an all-day kitchen across two warm floors and an open-air terrace. Scroll to walk in.</p>
+            <div class="hero__ctas">
+              <a class="btn btn--brass" href="#reserve">Reserve a Table</a>
+              <a class="btn btn--ghost" href="#menu">View the Menu</a>
+            </div>
+            <div class="hero__dots" aria-hidden="true"><span class="is-on"></span><span></span><span></span></div>
+          </div>
+          <div class="scroll-hint" data-fade-out="0.2" aria-hidden="true"><span>Scroll</span><i></i></div>
+
+          <article class="beat" data-beat data-scene="scene-01" data-from="100" data-to="272" data-align="right">
+            <p class="beat__label">The Corner</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Golden hour,<br>on the corner</h2>
+            <p class="beat__text">Stone, glass and warm light. You'll spot the glow from halfway down the street.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-02" data-from="24" data-to="150" data-align="left">
+            <p class="beat__label">The Steps</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Up past<br>the lanterns</h2>
+            <p class="beat__text">Lantern-lit steps, olive trees and a warm timber canopy. The street goes quiet as you climb.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-02" data-from="196" data-to="294" data-align="right">
+            <p class="beat__label">The Sign</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Follow<br>the glow</h2>
+            <p class="beat__text">Our name, backlit on limestone. You're in the right place.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-03" data-from="30" data-to="286" data-align="left">
+            <p class="beat__label">The Threshold</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Leave the<br>street behind</h2>
+            <p class="beat__text">Woven pendants behind wide glass doors, marble steps under the sign. The noise drops away as you step up.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-04" data-from="40" data-to="288" data-align="right">
+            <p class="beat__label">Step Inside</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Smell that?</h2>
+            <p class="beat__text">Fresh grinds, warm milk and something just out of the oven. Welcome to cahā.</p>
+          </article>
+
+          <div class="chapter__dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Feature cards — "Everything you came for" ─────────────── -->
+    <section class="section section--foam" id="menu">
+      <div class="section__head reveal">
+        <div>
+          <p class="eyebrow">On the Menu</p>
+          <h2 class="section__title">Everything<br>you came for</h2>
+        </div>
+        <p class="section__aside">From the first espresso to the last slice of cake: what's pouring, baking and plating at cahā today.</p>
+      </div>
+
+      <div class="fcards reveal" data-cards>
+        <article class="fcard is-active" tabindex="0">
+          <img class="fcard__img" src="assets/frames/scene-07/ezgif-frame-295.jpg" style="--pos: 26% 50%"
+               alt="A cahā latte with rosetta art, steam rising, on a wooden table" loading="lazy" decoding="async">
+          <div class="fcard__shade"></div>
+          <div class="fcard__shine"></div>
+          <span class="fcard__label">Espresso Bar</span>
+          <span class="fcard__arrow" aria-hidden="true">↗</span>
+          <div class="fcard__body">
+            <h3 class="fcard__title">Pulled<br>to Order</h3>
+            <p class="fcard__desc">Espresso, flat whites and slow pour-overs, dialled in fresh every morning and finished by hand at the bar.</p>
+            <div class="fcard__meta"><strong>Espresso · Filter</strong><span>Iced &amp; cold brew too</span></div>
+            <a class="fcard__btn" href="#counter">Explore <span aria-hidden="true">›</span></a>
+          </div>
+        </article>
+
+        <article class="fcard" tabindex="0">
+          <img class="fcard__img" src="assets/frames/scene-07/ezgif-frame-121.jpg" style="--pos: 20% 50%"
+               alt="Croissants and brownies in the glass pastry case" loading="lazy" decoding="async">
+          <div class="fcard__shade"></div>
+          <div class="fcard__shine"></div>
+          <span class="fcard__label">Bakery</span>
+          <span class="fcard__arrow" aria-hidden="true">↗</span>
+          <div class="fcard__body">
+            <h3 class="fcard__title">Baked<br>This Morning</h3>
+            <p class="fcard__desc">Croissants, danishes and cakes from our own ovens. Best with a cup, better while they're still warm.</p>
+            <div class="fcard__meta"><strong>Fresh daily</strong><span>Until they're gone</span></div>
+            <a class="fcard__btn" href="#counter">Explore <span aria-hidden="true">›</span></a>
+          </div>
+        </article>
+
+        <article class="fcard" tabindex="0">
+          <img class="fcard__img" src="assets/frames/scene-09/ezgif-frame-295.jpg" style="--pos: 45% 50%"
+               alt="Poached egg and smoked salmon on toasted sourdough, a latte behind" loading="lazy" decoding="async">
+          <div class="fcard__shade"></div>
+          <div class="fcard__shine"></div>
+          <span class="fcard__label">Kitchen</span>
+          <span class="fcard__arrow" aria-hidden="true">↗</span>
+          <div class="fcard__body">
+            <h3 class="fcard__title">Brunch<br>All Day</h3>
+            <p class="fcard__desc">Eggs your way, smoked salmon, sourdough toasts and big bowls, served from the first coffee to the last.</p>
+            <div class="fcard__meta"><strong>All day</strong><span>Open to close</span></div>
+            <a class="fcard__btn" href="#table">Explore <span aria-hidden="true">›</span></a>
+          </div>
+        </article>
+
+        <article class="fcard" tabindex="0">
+          <img class="fcard__img" src="assets/frames/scene-12/ezgif-frame-295.jpg" style="--pos: 38% 50%"
+               alt="The upstairs lounge: white armchairs, arched windows and the city at dusk" loading="lazy" decoding="async">
+          <div class="fcard__shade"></div>
+          <div class="fcard__shine"></div>
+          <span class="fcard__label">Lounge</span>
+          <span class="fcard__arrow" aria-hidden="true">↗</span>
+          <div class="fcard__body">
+            <h3 class="fcard__title">Room<br>to Stay</h3>
+            <p class="fcard__desc">An upstairs lounge with deep armchairs, arched windows and a view, for meetings, reading or nothing at all.</p>
+            <div class="fcard__meta"><strong>First floor</strong><span>Up the brick stair</span></div>
+            <a class="fcard__btn" href="#upstairs">Explore <span aria-hidden="true">›</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         CHAPTER II — The Bar  (scenes 05–07)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="chapter" id="bar" data-chapter
+             data-scenes="scene-05 scene-06 scene-07" style="--scenes: 3"
+             aria-label="Chapter two: The Bar">
+      <div class="chapter__stage">
+        <canvas class="chapter__canvas" role="img"
+                aria-label="Film: the long dining hall, the espresso bar with its menu board and pastry case, and a latte being served"></canvas>
+        <div class="chapter__shade chapter__shade--left" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--right" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--bottom" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--top" aria-hidden="true"></div>
+
+        <div class="chapter__ui">
+          <div class="chapter__label"><span></span><p>Chapter II · The Bar</p><span></span></div>
+          <div class="chapter__title" data-fade-out="0.45">
+            <span class="chapter__num">II</span>
+            <h2 class="chapter__name">The Bar</h2>
+            <p class="chapter__sub">Where every cup begins</p>
+          </div>
+
+          <article class="beat" data-beat data-scene="scene-05" data-from="84" data-to="272" data-align="right">
+            <p class="beat__label">The Room</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">A long room<br>made for lingering</h2>
+            <p class="beat__text">Oak tables, woven pendants and soft arches. Seats for a quick espresso or a slow afternoon.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-06" data-from="196" data-to="294" data-align="left">
+            <p class="beat__label">The Counter</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Two machines,<br>never idle</h2>
+            <p class="beat__text">A dark marble bar, a glowing menu board and a grinder that barely gets a break.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-07" data-from="24" data-to="116" data-align="right">
+            <p class="beat__label">The Case</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Still warm<br>from the oven</h2>
+            <p class="beat__text">Croissants, brownies and cakes, restocked right through the day.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-07" data-from="168" data-to="292" data-align="left">
+            <p class="beat__label">The Pour</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Finished<br>by hand</h2>
+            <p class="beat__text">Silky milk, a steady wrist and a rosetta on top. Every cup is poured to order.</p>
+          </article>
+
+          <div class="chapter__dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Looping marquee — "From the counter" ─────────────────── -->
+    <section class="section section--espresso section--bleed" id="counter">
+      <div class="section__head reveal">
+        <div>
+          <p class="eyebrow">Fresh Today</p>
+          <h2 class="section__title">From the counter</h2>
+        </div>
+        <p class="section__aside">A few favourites from the bar and the kitchen, made here from morning to close.</p>
+      </div>
+
+      <div class="marquee">
+        <div class="marquee__track">
+          <figure class="mcard"><img src="assets/frames/scene-07/ezgif-frame-295.jpg" style="--pos: 24% 50%" alt="Latte with rosetta art" loading="lazy" decoding="async"><figcaption>Rosetta latte</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-08/ezgif-frame-199.jpg" alt="A cinnamon danish beside a latte" loading="lazy" decoding="async"><figcaption>Danish &amp; latte</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-09/ezgif-frame-247.jpg" style="--pos: 40% 50%" alt="Poached egg with smoked salmon on sourdough" loading="lazy" decoding="async"><figcaption>Salmon &amp; poached egg</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-07/ezgif-frame-091.jpg" style="--pos: 70% 50%" alt="Croissants in the pastry case" loading="lazy" decoding="async"><figcaption>The pastry case</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-06/ezgif-frame-295.jpg" style="--pos: 30% 50%" alt="The espresso bar with two machines and the menu board" loading="lazy" decoding="async"><figcaption>The espresso bar</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-11/ezgif-frame-061.jpg" style="--pos: 65% 50%" alt="A latte by the cake case" loading="lazy" decoding="async"><figcaption>Cake-case latte</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-08/ezgif-frame-295.jpg" style="--pos: 45% 50%" alt="A morning pastry with coffee and a candle" loading="lazy" decoding="async"><figcaption>Morning pastry</figcaption></figure>
+          <figure class="mcard"><img src="assets/frames/scene-10/ezgif-frame-295.jpg" style="--pos: 60% 50%" alt="A window seat at sunset with an open book" loading="lazy" decoding="async"><figcaption>Window seat</figcaption></figure>
+          <!-- duplicate set for a seamless loop -->
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-07/ezgif-frame-295.jpg" style="--pos: 24% 50%" alt="" loading="lazy" decoding="async"><figcaption>Rosetta latte</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-08/ezgif-frame-199.jpg" alt="" loading="lazy" decoding="async"><figcaption>Danish &amp; latte</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-09/ezgif-frame-247.jpg" style="--pos: 40% 50%" alt="" loading="lazy" decoding="async"><figcaption>Salmon &amp; poached egg</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-07/ezgif-frame-091.jpg" style="--pos: 70% 50%" alt="" loading="lazy" decoding="async"><figcaption>The pastry case</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-06/ezgif-frame-295.jpg" style="--pos: 30% 50%" alt="" loading="lazy" decoding="async"><figcaption>The espresso bar</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-11/ezgif-frame-061.jpg" style="--pos: 65% 50%" alt="" loading="lazy" decoding="async"><figcaption>Cake-case latte</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-08/ezgif-frame-295.jpg" style="--pos: 45% 50%" alt="" loading="lazy" decoding="async"><figcaption>Morning pastry</figcaption></figure>
+          <figure class="mcard" aria-hidden="true"><img src="assets/frames/scene-10/ezgif-frame-295.jpg" style="--pos: 60% 50%" alt="" loading="lazy" decoding="async"><figcaption>Window seat</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         CHAPTER III — The Table  (scenes 08–10)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="chapter" id="table" data-chapter
+             data-scenes="scene-08 scene-09 scene-10" style="--scenes: 3"
+             aria-label="Chapter three: The Table">
+      <div class="chapter__stage">
+        <canvas class="chapter__canvas" role="img"
+                aria-label="Film: a latte and a warm pastry, a brunch plate of poached egg and smoked salmon, then a window seat at sunset"></canvas>
+        <div class="chapter__shade chapter__shade--left" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--right" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--bottom" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--top" aria-hidden="true"></div>
+
+        <div class="chapter__ui">
+          <div class="chapter__label"><span></span><p>Chapter III · The Table</p><span></span></div>
+          <div class="chapter__title" data-fade-out="0.45">
+            <span class="chapter__num">III</span>
+            <h2 class="chapter__name">The Table</h2>
+            <p class="chapter__sub">Something to go with it</p>
+          </div>
+
+          <article class="beat" data-beat data-scene="scene-08" data-from="84" data-to="272" data-align="left">
+            <p class="beat__label">Morning</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Coffee and<br>something warm</h2>
+            <p class="beat__text">Laminated, glazed and best eaten warm. Our pastries come out of the oven every morning.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-09" data-from="40" data-to="272" data-align="right">
+            <p class="beat__label">Brunch</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Brunch,<br>all day long</h2>
+            <p class="beat__text">Poached eggs, smoked salmon and toasted sourdough. Breakfast doesn't stop at eleven here.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-10" data-from="150" data-to="292" data-align="left">
+            <p class="beat__label">Stay a While</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">A window seat<br>and a good book</h2>
+            <p class="beat__text">Big glass, low sun and nobody rushing you out. Stay for one cup, or three.</p>
+          </article>
+
+          <div class="chapter__dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Gallery — "The Space" ─────────────────────────────────── -->
+    <section class="section section--leaf" id="space">
+      <div class="section__head reveal">
+        <div>
+          <p class="eyebrow">The Space</p>
+          <h2 class="section__title">Designed for<br>slow afternoons</h2>
+        </div>
+        <p class="section__aside">Limestone, oak, rattan and brass. A room that looks as warm as the coffee tastes.</p>
+      </div>
+
+      <div class="gallery reveal">
+        <figure class="gcard gcard--tall" tabindex="0">
+          <img src="assets/frames/scene-05/ezgif-frame-199.jpg" style="--pos: 45% 50%" alt="The long dining hall under woven pendant lights" loading="lazy" decoding="async">
+          <figcaption><span class="gcard__label">The Hall</span><span class="gcard__desc">Banquettes and woven pendants down the whole length of the room.</span></figcaption>
+          <span class="gcard__arrow" aria-hidden="true">↗</span>
+        </figure>
+        <figure class="gcard" tabindex="0">
+          <img src="assets/frames/scene-04/ezgif-frame-295.jpg" alt="The entrance: glass doors, a limestone wall and the cahā doormat" loading="lazy" decoding="async">
+          <figcaption><span class="gcard__label">The Entrance</span><span class="gcard__desc">Glass doors, a limestone wall and our name underfoot.</span></figcaption>
+          <span class="gcard__arrow" aria-hidden="true">↗</span>
+        </figure>
+        <figure class="gcard" tabindex="0">
+          <img src="assets/frames/scene-06/ezgif-frame-001.jpg" style="--pos: 30% 50%" alt="A softly lit arch with the cahā logo above the banquettes" loading="lazy" decoding="async">
+          <figcaption><span class="gcard__label">The Arch</span><span class="gcard__desc">A softly lit arch frames the banquette seating.</span></figcaption>
+          <span class="gcard__arrow" aria-hidden="true">↗</span>
+        </figure>
+        <figure class="gcard gcard--wide-sm" tabindex="0">
+          <img src="assets/frames/scene-10/ezgif-frame-259.jpg" style="--pos: 60% 50%" alt="Window tables at sunset with an open book" loading="lazy" decoding="async">
+          <figcaption><span class="gcard__label">Window Seats</span><span class="gcard__desc">Front-row seats for the sunset. Book optional.</span></figcaption>
+          <span class="gcard__arrow" aria-hidden="true">↗</span>
+        </figure>
+        <div class="gallery__pair">
+          <figure class="gcard gcard--sm" tabindex="0">
+            <img src="assets/frames/scene-12/ezgif-frame-103.jpg" style="--pos: 40% 50%" alt="The oak staircase beside a brick wall" loading="lazy" decoding="async">
+            <figcaption><span class="gcard__label">The Stair</span><span class="gcard__desc">Oak treads up to the lounge.</span></figcaption>
+          </figure>
+          <figure class="gcard gcard--sm" tabindex="0">
+            <img src="assets/frames/scene-03/ezgif-frame-295.jpg" style="--pos: 55% 50%" alt="Marble steps up to the glass facade" loading="lazy" decoding="async">
+            <figcaption><span class="gcard__label">The Steps</span><span class="gcard__desc">Marble, olive trees, glass.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         CHAPTER IV — Upstairs  (scenes 11–12)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="chapter" id="upstairs" data-chapter
+             data-scenes="scene-11 scene-12" style="--scenes: 2"
+             aria-label="Chapter four: Upstairs">
+      <div class="chapter__stage">
+        <canvas class="chapter__canvas" role="img"
+                aria-label="Film: past the cake case to a brick-lined staircase, then up into the lounge with its arched windows at dusk"></canvas>
+        <div class="chapter__shade chapter__shade--left" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--right" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--bottom" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--top" aria-hidden="true"></div>
+
+        <div class="chapter__ui">
+          <div class="chapter__label"><span></span><p>Chapter IV · Upstairs</p><span></span></div>
+          <div class="chapter__title" data-fade-out="0.45">
+            <span class="chapter__num">IV</span>
+            <h2 class="chapter__name">Upstairs</h2>
+            <p class="chapter__sub">The quieter floor</p>
+          </div>
+
+          <article class="beat" data-beat data-scene="scene-11" data-from="84" data-to="272" data-align="right">
+            <p class="beat__label">The Stair</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">There's more<br>upstairs</h2>
+            <p class="beat__text">Past the cake case, a brick-lined stair climbs to the first floor.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-12" data-from="40" data-to="288" data-align="left">
+            <p class="beat__label">The Lounge</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Armchairs and<br>arched windows</h2>
+            <p class="beat__text">Soft seats, low tables and a view over the rooftops. Made for long talks, laptops and doing nothing at all.</p>
+          </article>
+
+          <div class="chapter__dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── About & stats — "A coffee club, open to everyone" ────── -->
+    <section class="about" id="about">
+      <div class="about__inner">
+        <div class="about__text reveal">
+          <p class="eyebrow eyebrow--muted">Why cahā</p>
+          <h2 class="about__title">A coffee club,<br><span>open to everyone.</span></h2>
+          <p class="about__copy">cahā started with a simple idea: a place that takes coffee seriously and people warmly. Drop in for a quick espresso at the bar or claim a window seat for the afternoon. Either way, you're a member here.</p>
+          <ul class="stats">
+            <li><strong>2</strong><span>Floors to settle into</span></li>
+            <li><strong>1</strong><span>Open-air terrace</span></li>
+            <li><strong>7</strong><span>Days a week</span></li>
+            <li><strong>All day</strong><span>Brunch &amp; bakes</span></li>
+          </ul>
+          <a class="btn btn--light" href="#visit">Plan your visit <span aria-hidden="true">›</span></a>
+        </div>
+
+        <div class="about__visual reveal">
+          <div class="about__glow" aria-hidden="true"></div>
+          <div class="about__card" data-tilt>
+            <img src="assets/frames/scene-02/ezgif-frame-295.jpg" style="--pos: 32% 50%" alt="The backlit cahā sign on a limestone wall" loading="lazy" decoding="async">
+            <div class="about__shade" aria-hidden="true"></div>
+            <div class="about__shine" aria-hidden="true"></div>
+            <div class="about__badge">
+              <strong>Espresso · Kitchen · Terrace</strong>
+              <span>Early till late</span>
+            </div>
+            <span class="about__tag">The Coffee Club</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════════════
+         CHAPTER V — After Dark  (scenes 13–14)
+         ═════════════════════════════════════════════════════════════ -->
+    <section class="chapter chapter--night" id="after-dark" data-chapter
+             data-scenes="scene-13 scene-14" style="--scenes: 2"
+             aria-label="Chapter five: After Dark">
+      <div class="chapter__stage">
+        <canvas class="chapter__canvas" role="img"
+                aria-label="Film: out onto the terrace as the sun sets and the green neon sign comes on, then the building lit up at night"></canvas>
+        <div class="chapter__shade chapter__shade--left" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--right" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--bottom" aria-hidden="true"></div>
+        <div class="chapter__shade chapter__shade--top" aria-hidden="true"></div>
+
+        <div class="chapter__ui">
+          <div class="chapter__label"><span></span><p>Chapter V · After Dark</p><span></span></div>
+          <div class="chapter__title" data-fade-out="0.45">
+            <span class="chapter__num">V</span>
+            <h2 class="chapter__name">After Dark</h2>
+            <p class="chapter__sub">The lights stay on</p>
+          </div>
+
+          <article class="beat" data-beat data-scene="scene-13" data-from="84" data-to="272" data-align="right">
+            <p class="beat__label">The Terrace</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Sunset<br>on the terrace</h2>
+            <p class="beat__text">As the sky turns, the open-air deck fills up and the green neon flickers on.</p>
+          </article>
+          <article class="beat" data-beat data-scene="scene-14" data-from="40" data-to="292" data-align="left">
+            <p class="beat__label">Nightfall</p>
+            <span class="beat__rule" aria-hidden="true"></span>
+            <h2 class="beat__heading">Lights on,<br>until late</h2>
+            <p class="beat__text">Long after the morning rush, the windows stay warm. See you tomorrow.</p>
+          </article>
+
+          <div class="chapter__dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Plan your visit + CTA ─────────────────────────────────── -->
+    <!-- Placeholder details: replace the hours/booking link with the real ones. -->
+    <section class="section section--foam visit" id="visit">
+      <div class="visit__grid reveal">
+        <div>
+          <h3>Hours</h3>
+          <p>Open every day<br>Early till late<br>Brunch served all day</p>
+        </div>
+        <div>
+          <h3>Where to sit</h3>
+          <p>Ground-floor café &amp; bar<br>First-floor lounge<br>Open-air terrace</p>
+        </div>
+        <div>
+          <h3>Reservations</h3>
+          <p>Walk-ins always welcome.<br>Book ahead for groups of six or more, and for terrace tables at sunset.</p>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <p class="muted">Order at the bar, takeaway any time, and laptops are welcome upstairs.</p>
+        </div>
+      </div>
+
+      <div class="cta reveal" id="reserve">
+        <img src="assets/frames/scene-01/ezgif-frame-199.jpg" alt="The cahā building at golden hour" loading="lazy" decoding="async">
+        <div class="cta__shade" aria-hidden="true"></div>
+        <div class="cta__body">
+          <p class="eyebrow eyebrow--light">Save a Seat</p>
+          <h2 class="cta__title">Reserve Your Table</h2>
+          <p class="cta__sub">A seat by the window, a corner of the lounge, or a table on the terrace at sunset.</p>
+          <!-- TODO: point this at your booking page (e.g. an OpenTable/Resy/Google link) -->
+          <a class="btn btn--light" href="#reserve">Book Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="brandmark">cahā</span>
+      <span class="footer__tag">The Coffee Club</span>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#arrival">Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#space">The Space</a>
+      <a href="#visit">Visit</a>
+      <a href="film.html">Watch the full film ↗</a>
+    </nav>
+    <p class="footer__legal">© <span data-year>2026</span> cahā — The Coffee Club</p>
+  </footer>
+
+  <!-- ── Ticker (fixed, bottom) ────────────────────────────────── -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Espresso &amp; filter, dialled in every morning</span>
+      <span>Pastries baked in-house daily</span>
+      <span>Brunch served all day</span>
+      <span>Two floors &amp; an open-air terrace</span>
+      <span>Walk-ins always welcome</span>
+      <span>Espresso &amp; filter, dialled in every morning</span>
+      <span>Pastries baked in-house daily</span>
+      <span>Brunch served all day</span>
+      <span>Two floors &amp; an open-air terrace</span>
+      <span>Walk-ins always welcome</span>
+    </div>
   </div>
-
-  <!-- Play control, bottom-center: the film plays when you ask it to -->
-  <button id="playctl" type="button" aria-pressed="false" aria-label="Play the scroll film">▶</button>
-
-  <!-- Scroll hint, bottom-center -->
-  <div id="hint">
-    <span>scroll</span>
-    <span class="chev"></span>
-  </div>
-
-  <!-- Brand wordmark, bottom-right — sits over the watermark corner -->
-  <div id="wordmark">Caha</div>
-
-  <!-- Loading screen -->
-  <div id="loader">
-    <div class="loader-brand">Caha</div>
-    <div class="loader-bar"><div id="loader-fill"></div></div>
-    <div id="loader-pct">0%</div>
-  </div>
-
-  <!-- Invisible element that creates the scrollable length -->
-  <div id="spacer" aria-hidden="true"></div>
 
   <noscript>
-    <div style="position:fixed;inset:0;display:grid;place-items:center;background:#0b0806;color:#f4ead9;font-family:Georgia,serif;padding:2rem;text-align:center">
-      Caha is a scroll-driven film — it needs JavaScript to play.
-    </div>
+    <div class="noscript">cahā is a scroll-driven film. It needs JavaScript to play.</div>
   </noscript>
 
-  <script src="app.js"></script>
-  <!-- audit harness: no-op unless ?audit=1 (or Ctrl+Shift+A) -->
-  <script src="diagnostics.js" defer></script>
+  <script src="vendor/gsap/gsap.min.js" defer></script>
+  <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="site/scroll-canvas.js" defer></script>
+  <script src="site/site.js" defer></script>
 </body>
 </html>

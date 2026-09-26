@@ -1,4 +1,130 @@
-# caha
+# cahā — The Coffee Club
+
+A café website you walk through by scrolling. Five pinned **chapters** scrub caha's
+14-scene film (14 × 300 frames in `assets/frames/`) on a full-screen canvas, with story
+beats timed to the footage, and the café's sections in between: menu cards, a counter
+marquee, the space, the story, and plan-your-visit.
+
+The scroll system is the one from
+[alagappan567/cafe-3d-scroll](https://github.com/alagappan567/cafe-3d-scroll)
+(`ScrollCanvas.tsx` and its siblings), ported to this repo's no-build vanilla stack with
+the same library and version (GSAP 3.15 ScrollTrigger, vendored), and scaled from one
+300-frame clip per section to caha's 4,200-frame reel.
+
+## Run it
+
+```bash
+npm run dev          # http://localhost:5173
+```
+
+There's no build step and nothing to install for the site itself. The frames are committed,
+and GSAP and the fonts are vendored (`vendor/gsap/`, `assets/fonts/`), so the page makes no
+third-party requests. To deploy, serve the repo root from any static host.
+`npm i` is only needed for the browser check below and the legacy film's tooling.
+
+## The scroll system
+
+| Reference (Next.js) | caha (`index.html`, `site/scroll-canvas.js`) |
+| --- | --- |
+| `relative h-[500vh]` container | `.chapter`, `scenes × --scene-height + 100vh` tall |
+| `sticky top-0 h-screen` stage + `<canvas>` | `.chapter__stage` + `canvas.chapter__canvas` |
+| `ScrollTrigger.create({ start: "top top", end: "bottom bottom", scrub: 0.5 })` → frame | the same trigger, driving a `gsap.to(playhead)` tween, so `scrub: 0.5` really smooths (a bare trigger ignores scrub) |
+| cover-fit `drawImage` | the same |
+| `STORY_SCENES` `{ from, to, label, heading, text, align }` | `<article data-beat data-scene data-from data-to data-align>` in the HTML |
+| progress dots (24×7 active pill) | the same, one per beat |
+| hero overlay fading out (`end: "8% top"`) | `[data-fade-out]`: the hero and each chapter's title card |
+| preloader, fixed ticker, grain, expanding tilt cards, gallery, marquee, stats, CTA | the same pieces, in cahā's palette, with stills taken from the reel |
+
+What had to change because caha's reel is 14× longer (239 MB):
+
+- **Chapters span scenes.** One sticky stage plays 2–4 consecutive scenes as one clip.
+- **Frames stream coarse → fine** instead of all preloading at mount. The chapter under the
+  viewport loads every 32nd frame, then every 16th, then fills a moving window around the
+  playhead. The next chapter gets its entry frames early, and far chapters give back their
+  fine frames.
+- **Two-stage loading.** Bytes download cheaply (6 at a time on desktop, 4 on phones). Only
+  frames near the playhead, weighted towards the scroll direction, are `decode()`d ahead of
+  time (2 at a time). A 1080p decode is the expensive part, and decoding everything on
+  arrival starves a phone's main thread.
+- **The nearest frame is always drawn** until the exact one lands, so scrubbing never shows
+  black.
+- **The canvas never exceeds the frames' real detail.** A retina laptop gets a 1728×1080
+  surface instead of 2880×1800, and a phone ~500×1080. In both, the frame is drawn at exactly 1:1.
+- **Density follows the device**: every 2nd frame on desktop (150 per scene, the reference's
+  frames-per-viewport density), every 3rd on phones, every 4th with Save-Data.
+- `prefers-reduced-motion`: no scrub smoothing, and no ticker, marquee, grain or tilt motion.
+
+## The chapters
+
+| | Chapter | Scenes | Beats |
+| --- | --- | --- | --- |
+| I | Arrival (hero) | 01–04 | The Corner · The Steps · The Sign · The Threshold · Step Inside |
+| II | The Bar | 05–07 | The Room · The Counter · The Case · The Pour |
+| III | The Table | 08–10 | Morning · Brunch · Stay a While |
+| IV | Upstairs | 11–12 | The Stair · The Lounge |
+| V | After Dark | 13–14 | The Terrace · Nightfall |
+
+Between them: *Everything you came for* (expanding cards), *From the counter* (marquee),
+*The Space* (gallery), *A coffee club, open to everyone* (story + stats), and *Plan your
+visit* + *Reserve your table*.
+
+## Edit it
+
+All copy and timing is in `index.html`, so you don't need to touch the engine to change it.
+
+```html
+<section class="chapter" id="bar" data-chapter data-scenes="scene-05 scene-06 scene-07" style="--scenes: 3">
+  …
+  <article class="beat" data-beat data-scene="scene-06" data-from="196" data-to="294" data-align="left">
+    <p class="beat__label">The Counter</p> …
+```
+
+- `data-from` / `data-to` are **source frame numbers (1–300) of that scene**. To retime a
+  beat, open `assets/frames/scene-06/ezgif-frame-196.jpg` and its neighbours to see what's
+  on screen. Beats alternate `left` / `right`, like the reference's.
+- Chapters must play the reel in order, each scene once (`npm test` checks this).
+- **Pace**: `--scene-height` in `site/site.css` is the scroll length per scene: 180vh on
+  desktop, 150vh on phones. The reference gives one clip 400vh.
+- **Density**: `?step=1` plays every source frame (`?step=` overrides the device default).
+- **Stills**: the content sections use reel frames directly as images, with numbers
+  6k+1 so the canvas cache shares them on desktop and phones.
+- **Placeholders to replace**: the *Plan your visit* details, the stats, and the
+  **Book Now** link (`#reserve`, marked `TODO` in the HTML).
+
+## Files
+
+| Path | What |
+| --- | --- |
+| `index.html` | the site: chapters, beats, content sections |
+| `site/scroll-canvas.js` | the scroll system (chapters → ScrollTrigger → canvas, beats, dots, loader) |
+| `site/site.js` | preloader (tracks real frame loading), nav, expanding cards, tilt, reveals |
+| `site/site.css` | styles |
+| `vendor/gsap/` | GSAP + ScrollTrigger 3.15.0, unmodified |
+| `assets/fonts/` | Inter, Playfair Display, Poppins (SIL OFL), self-hosted |
+| `assets/frames/`, `assets/manifest.json` | the reel |
+| `film.html` | the original single-canvas film (below) |
+
+## Test it
+
+```bash
+npm test             # static checks: the site's (tools/site.test.mjs) + the film's
+npm run check:site   # real Chromium, desktop + phone: scrubs every chapter (≈3 min)
+```
+
+`check:site` scrolls to the middle of every beat and waits until the drawn frame *is* the
+frame under the playhead. It then checks the canvas holds a real picture, the right beat
+and dot are active, the gaps at scene cuts show only film, the hero overlay fades, every
+visible still loads, and nothing errors. It writes `reports/site-check.json`, with
+screenshots in `reports/shots/site/`. In the browser console, `cahaFilm.stats()` shows
+the loader's state (focus chapter, loaded and decoded frames, in-flight requests).
+
+## The single-canvas film (`film.html`)
+
+The site's first engine is kept at [`film.html`](film.html), and the footer links to it as
+*Watch the full film*. It plays all 14 scenes as one continuous, crossfaded film on a fixed
+canvas, with its own vanilla rAF engine (`app.js`, `style.css`, `diagnostics.js`). Everything
+below documents it, and the audit tools (`browser-audit`, `screen-quality`, `decode-cost`)
+measure it.
 
 A cafe in motion: a scroll-scrubbed film (14 scenes × 300 rendered frames) that you
 play with the scrollbar. Vanilla JS, one `requestAnimationFrame` loop, no framework.
@@ -16,19 +142,19 @@ tighter decode tail. Two better-looking tiers (1440 and 1920 AVIF) were built, m
 scenarios pass; the two that do not — a 4×-CPU-throttled fling and teleport's layout counter —
 are named with their cause in AUDIT.md.
 
-## Run it
+### Run it
 
 ```bash
 npm i                       # sharp (frames) + puppeteer-core/@sparticuz/chromium (audit)
 npm run setup               # = fetch:frames + build:tiers (≈12 min on 2 cores, once)
-npm run dev                 # http://localhost:5173
+npm run dev                 # http://localhost:5173/film.html
 ```
 
-The frames are large and are **not** in this branch's history: `assets/frames/` (the 239 MB
-source reel) and every `assets/web*/` tier are gitignored, so a fresh clone has only
-`assets/manifest.json`. That is what **"No frames loaded — 24 requests failed"** means: the
-engine fell through every tier probe to the source reel and found nothing there either (24 is
-the desktop warm-up on a 2-core box). Recover in two steps:
+The source reel (`assets/frames/`, 239 MB) is committed on `main`; only the built
+`assets/web*/` tiers are gitignored, and the film falls back to the reel without them. On a
+checkout that lacks the reel (some older branches), **"No frames loaded — 24 requests
+failed"** means the engine fell through every tier probe to the source reel and found nothing
+there either (24 is the desktop warm-up on a 2-core box). Recover in two steps:
 
 ```bash
 npm run fetch:frames        # git archive of the branch that carries the reel → assets/frames
@@ -82,13 +208,13 @@ Large sets can live anywhere:
 CAHA_SRC_FRAMES=/path/to/frames CAHA_WEB_DIR=/path/to/web npm run dev
 ```
 
-## Test it
+### Test it
 
 ```bash
 npm test        # source invariants + a gate on the committed audit reports (~0.2 s)
 ```
 
-Thirteen checks: `app.js` has exactly one animation loop (every `requestAnimationFrame`
+The film's checks live in `tools/audit.test.mjs`: `app.js` has exactly one animation loop (every `requestAnimationFrame`
 re-arms the same callback), one passive scroll listener and no non-passive compositor input
 listeners, no layout-triggering style writes in the frame path, scroll metrics measured on
 invalidation rather than per frame, one accounting path into the bitmap cache, the preload
@@ -99,7 +225,7 @@ real-browser report must be green while the v2.1 baseline must still record the 
 pass fixed. If someone regenerates a report where a check fails, or the baseline stops
 reproducing, `npm test` fails and `AUDIT.md` is flagged as stale.
 
-## Measure the picture
+### Measure the picture
 
 ```bash
 # per frame: bytes, PSNR, SSIM for any setting, plus a full-reel size projection
@@ -120,7 +246,7 @@ playhead, which is how FIX V and FIX W were found (`--loose` measures the starve
 instead). `--tier-dir` + `--overrides` let you serve the *source reel* as a tier, which is the
 zero-compression ceiling every quality claim in AUDIT.md is quoted against.
 
-## Audit it in a real browser
+### Audit it in a real browser
 
 ```bash
 npm run audit:browser                                   # working tree, all 8 scenarios (≈4 min)
@@ -150,15 +276,15 @@ Prefer the modelled harness for payload/memory curves it can compute without a b
 CAHA_SRC_FRAMES=/path/to/frames npm run simulate -- --engine v1 --net 4g --device mobile
 ```
 
-## See it on your machine
+### See it on your machine
 
-Open the site with `?audit=1` (or press Ctrl+Shift+A): a live overlay reports fps and
+Open `film.html?audit=1` (or press Ctrl+Shift+A on `film.html`): a live overlay reports fps and
 frame-time percentiles, live rAF-loop count, forced-layout reads per frame, non-passive
 listener detection, decoded-bitmap megabytes, payload bytes, and displayed-frame lag —
 the Step-1 checklist from the brief, running against whatever code is loaded.
 `copy json` puts a full snapshot on your clipboard.
 
-## How it works (v2.3)
+### How it works (v2.3)
 
 - **One rAF loop.** Order per tick: input → autoplay ramp → damped playhead → preload
   schedule → UI writes → draw. Nothing else schedules frames.
