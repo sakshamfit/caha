@@ -240,7 +240,7 @@ async function wheel(page, { x, y, deltaY, count, gapMs, burst = false }) {
   }
 }
 
-async function setupPage(browser, server, { device, url = '/index.html', engine = ENGINE }) {
+async function setupPage(browser, server, { device, url = '/film.html', engine = ENGINE }) {
   const page = await browser.newPage();
   const client = await page.createCDPSession();
   await client.send('Performance.enable');
@@ -295,8 +295,8 @@ async function setupPage(browser, server, { device, url = '/index.html', engine 
   if (engine === 'v1') {
     await page.setRequestInterception(true);
     page.on('request', async (req) => {
-      if (req.isNavigationRequest() && req.frame() === page.mainFrame() && req.url().includes('index.html')) {
-        let html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+      if (req.isNavigationRequest() && req.frame() === page.mainFrame() && req.url().includes('film.html')) {
+        let html = fs.readFileSync(path.join(ROOT, 'film.html'), 'utf8');
         html = html.replace('<script src="app.js"></script>', '<script src="tools/fixtures/app.v1.js"></script>')
           .replace('<script src="diagnostics.js" defer></script>', '');
         return req.respond({ status: 200, contentType: 'text/html; charset=utf-8', body: html });
@@ -749,7 +749,7 @@ function scenarios() {
     { name: 'mobile/touch-4x', device: 'mobile', settleMs: 3500, cpuThrottle: 4, plan: touchFling, dumpTrace: true },
     { name: 'mobile/accuracy', device: 'mobile', settleMs: 3500, plan: async () => { await sleep(500); }, accuracy: [0.2, 0.7] },
     { name: 'mobile/urlbar-4x', device: 'mobile', settleMs: 3500, cpuThrottle: 4, plan: urlBar, dumpTrace: true },
-    { name: 'desktop/autoplay', device: 'desktop', settleMs: 3000, url: '/index.html?autoplay=1', plan: autoplay, tailMs: 100 },
+    { name: 'desktop/autoplay', device: 'desktop', settleMs: 3000, url: '/film.html?autoplay=1', plan: autoplay, tailMs: 100 },
   ];
 }
 

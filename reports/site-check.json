@@ -1,0 +1,1331 @@
+{
+  "at": "2026-09-26T09:13:19.306Z",
+  "checks": [
+    {
+      "name": "desktop: preloader clears",
+      "ok": true,
+      "detail": {
+        "ms": 5581,
+        "filmReadyMs": 316
+      }
+    },
+    {
+      "name": "desktop: 5 chapters wired",
+      "ok": true,
+      "detail": [
+        "arrival:600",
+        "bar:450",
+        "table:450",
+        "upstairs:300",
+        "after-dark:300"
+      ]
+    },
+    {
+      "name": "desktop: hero overlay visible at top",
+      "ok": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "desktop: hero canvas painted at top",
+      "ok": true,
+      "detail": {
+        "w": 1440,
+        "h": 900,
+        "mean": 101.3,
+        "sd": 56.9
+      }
+    },
+    {
+      "name": "desktop: arrival beat 1 (p=0.15)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 92,
+        "drawn": 92,
+        "settledMs": 455,
+        "sd": 45.6
+      }
+    },
+    {
+      "name": "desktop: arrival beat 2 (p=0.32)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 193,
+        "drawn": 193,
+        "settledMs": 677,
+        "sd": 42.9
+      }
+    },
+    {
+      "name": "desktop: arrival beat 3 (p=0.45)",
+      "ok": true,
+      "detail": {
+        "beat": 2,
+        "dot": 2,
+        "target": 272,
+        "drawn": 272,
+        "settledMs": 516,
+        "sd": 49.5
+      }
+    },
+    {
+      "name": "desktop: arrival beat 4 (p=0.63)",
+      "ok": true,
+      "detail": {
+        "beat": 3,
+        "dot": 3,
+        "target": 378,
+        "drawn": 378,
+        "settledMs": 590,
+        "sd": 35.5
+      }
+    },
+    {
+      "name": "desktop: arrival beat 5 (p=0.89)",
+      "ok": true,
+      "detail": {
+        "beat": 4,
+        "dot": 4,
+        "target": 531,
+        "drawn": 531,
+        "settledMs": 448,
+        "sd": 41
+      }
+    },
+    {
+      "name": "desktop: arrival gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "desktop: bar beat 1 (p=0.20)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 89,
+        "drawn": 89,
+        "settledMs": 954,
+        "sd": 44.9
+      }
+    },
+    {
+      "name": "desktop: bar beat 2 (p=0.61)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 272,
+        "drawn": 272,
+        "settledMs": 612,
+        "sd": 48.7
+      }
+    },
+    {
+      "name": "desktop: bar beat 3 (p=0.74)",
+      "ok": true,
+      "detail": {
+        "beat": 2,
+        "dot": 2,
+        "target": 335,
+        "drawn": 335,
+        "settledMs": 679,
+        "sd": 53.1
+      }
+    },
+    {
+      "name": "desktop: bar beat 4 (p=0.92)",
+      "ok": true,
+      "detail": {
+        "beat": 3,
+        "dot": 3,
+        "target": 415,
+        "drawn": 415,
+        "settledMs": 668,
+        "sd": 54.6
+      }
+    },
+    {
+      "name": "desktop: bar gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "desktop: table beat 1 (p=0.20)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 89,
+        "drawn": 89,
+        "settledMs": 880,
+        "sd": 57.5
+      }
+    },
+    {
+      "name": "desktop: table beat 2 (p=0.51)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 227,
+        "drawn": 227,
+        "settledMs": 640,
+        "sd": 44.6
+      }
+    },
+    {
+      "name": "desktop: table beat 3 (p=0.91)",
+      "ok": true,
+      "detail": {
+        "beat": 2,
+        "dot": 2,
+        "target": 410,
+        "drawn": 410,
+        "settledMs": 735,
+        "sd": 63.4
+      }
+    },
+    {
+      "name": "desktop: table gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "desktop: upstairs beat 1 (p=0.30)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 89,
+        "drawn": 89,
+        "settledMs": 1113,
+        "sd": 43.3
+      }
+    },
+    {
+      "name": "desktop: upstairs beat 2 (p=0.77)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 232,
+        "drawn": 232,
+        "settledMs": 554,
+        "sd": 44.3
+      }
+    },
+    {
+      "name": "desktop: upstairs gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "desktop: after-dark beat 1 (p=0.30)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 89,
+        "drawn": 89,
+        "settledMs": 891,
+        "sd": 54.8
+      }
+    },
+    {
+      "name": "desktop: after-dark beat 2 (p=0.78)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 232,
+        "drawn": 232,
+        "settledMs": 491,
+        "sd": 39.6
+      }
+    },
+    {
+      "name": "desktop: after-dark gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "desktop: hero overlay faded after scrolling",
+      "ok": true,
+      "detail": {
+        "opacity": "0",
+        "visibility": "hidden"
+      }
+    },
+    {
+      "name": "desktop: #menu images load",
+      "ok": true,
+      "detail": {
+        "visible": 4,
+        "loaded": 4
+      }
+    },
+    {
+      "name": "desktop: #counter images load",
+      "ok": true,
+      "detail": {
+        "visible": 5,
+        "loaded": 5
+      }
+    },
+    {
+      "name": "desktop: #space images load",
+      "ok": true,
+      "detail": {
+        "visible": 6,
+        "loaded": 6
+      }
+    },
+    {
+      "name": "desktop: #about images load",
+      "ok": true,
+      "detail": {
+        "visible": 1,
+        "loaded": 1
+      }
+    },
+    {
+      "name": "desktop: #visit images load",
+      "ok": true,
+      "detail": {
+        "visible": 1,
+        "loaded": 1
+      }
+    },
+    {
+      "name": "desktop: no frame requests failed",
+      "ok": true,
+      "detail": {
+        "failed": 0,
+        "requestfailed": []
+      }
+    },
+    {
+      "name": "desktop: no console errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "desktop: deep link #after-dark opens on its chapter",
+      "ok": true,
+      "detail": {
+        "focus": "after-dark",
+        "readyAt": 336,
+        "drawn": 0,
+        "heroLoaded": 1
+      }
+    },
+    {
+      "name": "phone: preloader clears",
+      "ok": true,
+      "detail": {
+        "ms": 2973,
+        "filmReadyMs": 167
+      }
+    },
+    {
+      "name": "phone: 5 chapters wired",
+      "ok": true,
+      "detail": [
+        "arrival:400",
+        "bar:300",
+        "table:300",
+        "upstairs:200",
+        "after-dark:200"
+      ]
+    },
+    {
+      "name": "phone: hero overlay visible at top",
+      "ok": true,
+      "detail": {
+        "opacity": "1"
+      }
+    },
+    {
+      "name": "phone: hero canvas painted at top",
+      "ok": true,
+      "detail": {
+        "w": 499,
+        "h": 1080,
+        "mean": 90.3,
+        "sd": 48.1
+      }
+    },
+    {
+      "name": "phone: arrival beat 1 (p=0.15)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 62,
+        "drawn": 62,
+        "settledMs": 456,
+        "sd": 36.3
+      }
+    },
+    {
+      "name": "phone: arrival beat 2 (p=0.32)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 129,
+        "drawn": 129,
+        "settledMs": 540,
+        "sd": 49.5
+      }
+    },
+    {
+      "name": "phone: arrival beat 3 (p=0.45)",
+      "ok": true,
+      "detail": {
+        "beat": 2,
+        "dot": 2,
+        "target": 181,
+        "drawn": 181,
+        "settledMs": 394,
+        "sd": 51.1
+      }
+    },
+    {
+      "name": "phone: arrival beat 4 (p=0.63)",
+      "ok": true,
+      "detail": {
+        "beat": 3,
+        "dot": 3,
+        "target": 253,
+        "drawn": 253,
+        "settledMs": 624,
+        "sd": 32.9
+      }
+    },
+    {
+      "name": "phone: arrival beat 5 (p=0.89)",
+      "ok": true,
+      "detail": {
+        "beat": 4,
+        "dot": 4,
+        "target": 354,
+        "drawn": 354,
+        "settledMs": 575,
+        "sd": 36.1
+      }
+    },
+    {
+      "name": "phone: arrival gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "phone: bar beat 1 (p=0.20)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 59,
+        "drawn": 59,
+        "settledMs": 1020,
+        "sd": 47.7
+      }
+    },
+    {
+      "name": "phone: bar beat 2 (p=0.61)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 181,
+        "drawn": 181,
+        "settledMs": 527,
+        "sd": 48.8
+      }
+    },
+    {
+      "name": "phone: bar beat 3 (p=0.75)",
+      "ok": true,
+      "detail": {
+        "beat": 2,
+        "dot": 2,
+        "target": 223,
+        "drawn": 223,
+        "settledMs": 524,
+        "sd": 50.6
+      }
+    },
+    {
+      "name": "phone: bar beat 4 (p=0.92)",
+      "ok": true,
+      "detail": {
+        "beat": 3,
+        "dot": 3,
+        "target": 276,
+        "drawn": 276,
+        "settledMs": 377,
+        "sd": 47.1
+      }
+    },
+    {
+      "name": "phone: bar gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "phone: table beat 1 (p=0.20)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 59,
+        "drawn": 59,
+        "settledMs": 682,
+        "sd": 49.2
+      }
+    },
+    {
+      "name": "phone: table beat 2 (p=0.51)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 151,
+        "drawn": 151,
+        "settledMs": 469,
+        "sd": 42.6
+      }
+    },
+    {
+      "name": "phone: table beat 3 (p=0.91)",
+      "ok": true,
+      "detail": {
+        "beat": 2,
+        "dot": 2,
+        "target": 273,
+        "drawn": 273,
+        "settledMs": 430,
+        "sd": 58.1
+      }
+    },
+    {
+      "name": "phone: table gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "phone: upstairs beat 1 (p=0.30)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 59,
+        "drawn": 59,
+        "settledMs": 969,
+        "sd": 28.3
+      }
+    },
+    {
+      "name": "phone: upstairs beat 2 (p=0.77)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 154,
+        "drawn": 154,
+        "settledMs": 534,
+        "sd": 46.6
+      }
+    },
+    {
+      "name": "phone: upstairs gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "phone: after-dark beat 1 (p=0.30)",
+      "ok": true,
+      "detail": {
+        "beat": 0,
+        "dot": 0,
+        "target": 59,
+        "drawn": 59,
+        "settledMs": 730,
+        "sd": 45.1
+      }
+    },
+    {
+      "name": "phone: after-dark beat 2 (p=0.78)",
+      "ok": true,
+      "detail": {
+        "beat": 1,
+        "dot": 1,
+        "target": 155,
+        "drawn": 155,
+        "settledMs": 480,
+        "sd": 36.3
+      }
+    },
+    {
+      "name": "phone: after-dark gap between beats shows film only",
+      "ok": true,
+      "detail": {
+        "beat": -1,
+        "dot": 0
+      }
+    },
+    {
+      "name": "phone: hero overlay faded after scrolling",
+      "ok": true,
+      "detail": {
+        "opacity": "0",
+        "visibility": "hidden"
+      }
+    },
+    {
+      "name": "phone: #menu images load",
+      "ok": true,
+      "detail": {
+        "visible": 2,
+        "loaded": 2
+      }
+    },
+    {
+      "name": "phone: #counter images load",
+      "ok": true,
+      "detail": {
+        "visible": 3,
+        "loaded": 3
+      }
+    },
+    {
+      "name": "phone: #space images load",
+      "ok": true,
+      "detail": {
+        "visible": 4,
+        "loaded": 4
+      }
+    },
+    {
+      "name": "phone: #about images load",
+      "ok": true,
+      "detail": {
+        "visible": 1,
+        "loaded": 1
+      }
+    },
+    {
+      "name": "phone: #visit images load",
+      "ok": true,
+      "detail": {
+        "visible": 1,
+        "loaded": 1
+      }
+    },
+    {
+      "name": "phone: no frame requests failed",
+      "ok": true,
+      "detail": {
+        "failed": 0,
+        "requestfailed": []
+      }
+    },
+    {
+      "name": "phone: no console errors",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "phone: deep link #after-dark opens on its chapter",
+      "ok": true,
+      "detail": {
+        "focus": "after-dark",
+        "readyAt": 201,
+        "drawn": 0,
+        "heroLoaded": 1
+      }
+    }
+  ],
+  "profiles": {
+    "desktop": {
+      "openMs": 5581,
+      "filmReadyMs": 316,
+      "chapters": [
+        {
+          "id": "arrival",
+          "frames": 600,
+          "scrollPx": 6480,
+          "stops": [
+            {
+              "p": 0.154,
+              "want": 93,
+              "frame": 92.5,
+              "target": 92,
+              "drawn": 92,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 455,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 81,
+                "sd": 45.6
+              }
+            },
+            {
+              "p": 0.322,
+              "want": 193,
+              "frame": 193.01,
+              "target": 193,
+              "drawn": 193,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 677,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 72.4,
+                "sd": 42.9
+              }
+            },
+            {
+              "p": 0.454,
+              "want": 272,
+              "frame": 272.05,
+              "target": 272,
+              "drawn": 272,
+              "beat": 2,
+              "dot": 2,
+              "align": "right",
+              "settledMs": 516,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 83,
+                "sd": 49.5
+              }
+            },
+            {
+              "p": 0.632,
+              "want": 379,
+              "frame": 378.48,
+              "target": 378,
+              "drawn": 378,
+              "beat": 3,
+              "dot": 3,
+              "align": "left",
+              "settledMs": 590,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 85.1,
+                "sd": 35.5
+              }
+            },
+            {
+              "p": 0.887,
+              "want": 532,
+              "frame": 531.44,
+              "target": 531,
+              "drawn": 531,
+              "beat": 4,
+              "dot": 4,
+              "align": "right",
+              "settledMs": 448,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 94.8,
+                "sd": 41
+              }
+            }
+          ]
+        },
+        {
+          "id": "bar",
+          "frames": 450,
+          "scrollPx": 4860,
+          "stops": [
+            {
+              "p": 0.197,
+              "want": 89,
+              "frame": 88.51,
+              "target": 89,
+              "drawn": 89,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 954,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 95.9,
+                "sd": 44.9
+              }
+            },
+            {
+              "p": 0.606,
+              "want": 272,
+              "frame": 271.99,
+              "target": 272,
+              "drawn": 272,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 612,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 70.3,
+                "sd": 48.7
+              }
+            },
+            {
+              "p": 0.745,
+              "want": 335,
+              "frame": 334.53,
+              "target": 335,
+              "drawn": 335,
+              "beat": 2,
+              "dot": 2,
+              "align": "right",
+              "settledMs": 679,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 65.5,
+                "sd": 53.1
+              }
+            },
+            {
+              "p": 0.923,
+              "want": 415,
+              "frame": 414.54,
+              "target": 415,
+              "drawn": 415,
+              "beat": 3,
+              "dot": 3,
+              "align": "left",
+              "settledMs": 668,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 83.5,
+                "sd": 54.6
+              }
+            }
+          ]
+        },
+        {
+          "id": "table",
+          "frames": 450,
+          "scrollPx": 4860,
+          "stops": [
+            {
+              "p": 0.197,
+              "want": 89,
+              "frame": 88.51,
+              "target": 89,
+              "drawn": 89,
+              "beat": 0,
+              "dot": 0,
+              "align": "left",
+              "settledMs": 880,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 113.6,
+                "sd": 57.5
+              }
+            },
+            {
+              "p": 0.507,
+              "want": 228,
+              "frame": 227.46,
+              "target": 227,
+              "drawn": 227,
+              "beat": 1,
+              "dot": 1,
+              "align": "right",
+              "settledMs": 640,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 73.5,
+                "sd": 44.6
+              }
+            },
+            {
+              "p": 0.913,
+              "want": 410,
+              "frame": 410.01,
+              "target": 410,
+              "drawn": 410,
+              "beat": 2,
+              "dot": 2,
+              "align": "left",
+              "settledMs": 735,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 124,
+                "sd": 63.4
+              }
+            }
+          ]
+        },
+        {
+          "id": "upstairs",
+          "frames": 300,
+          "scrollPx": 3240,
+          "stops": [
+            {
+              "p": 0.296,
+              "want": 89,
+              "frame": 88.5,
+              "target": 89,
+              "drawn": 89,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 1113,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 88.7,
+                "sd": 43.3
+              }
+            },
+            {
+              "p": 0.774,
+              "want": 232,
+              "frame": 231.54,
+              "target": 232,
+              "drawn": 232,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 554,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 87,
+                "sd": 44.3
+              }
+            }
+          ]
+        },
+        {
+          "id": "after-dark",
+          "frames": 300,
+          "scrollPx": 3240,
+          "stops": [
+            {
+              "p": 0.296,
+              "want": 89,
+              "frame": 88.5,
+              "target": 89,
+              "drawn": 89,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 891,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 70.8,
+                "sd": 54.8
+              }
+            },
+            {
+              "p": 0.778,
+              "want": 233,
+              "frame": 232.46,
+              "target": 232,
+              "drawn": 232,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 491,
+              "px": {
+                "w": 1440,
+                "h": 900,
+                "mean": 60.1,
+                "sd": 39.6
+              }
+            }
+          ]
+        }
+      ],
+      "step": 2,
+      "requestsAtOpen": 410,
+      "loader": {
+        "requested": 3538,
+        "loaded": 3538,
+        "failed": 0,
+        "frameRequests": 3526
+      }
+    },
+    "phone": {
+      "openMs": 2973,
+      "filmReadyMs": 167,
+      "chapters": [
+        {
+          "id": "arrival",
+          "frames": 400,
+          "scrollPx": 5064,
+          "stops": [
+            {
+              "p": 0.154,
+              "want": 62,
+              "frame": 61.52,
+              "target": 62,
+              "drawn": 62,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 456,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 70.7,
+                "sd": 36.3
+              }
+            },
+            {
+              "p": 0.322,
+              "want": 129,
+              "frame": 128.51,
+              "target": 129,
+              "drawn": 129,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 540,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 86.9,
+                "sd": 49.5
+              }
+            },
+            {
+              "p": 0.454,
+              "want": 181,
+              "frame": 180.76,
+              "target": 181,
+              "drawn": 181,
+              "beat": 2,
+              "dot": 2,
+              "align": "right",
+              "settledMs": 394,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 105,
+                "sd": 51.1
+              }
+            },
+            {
+              "p": 0.633,
+              "want": 253,
+              "frame": 252.53,
+              "target": 253,
+              "drawn": 253,
+              "beat": 3,
+              "dot": 3,
+              "align": "left",
+              "settledMs": 624,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 97.4,
+                "sd": 32.9
+              }
+            },
+            {
+              "p": 0.887,
+              "want": 354,
+              "frame": 354.01,
+              "target": 354,
+              "drawn": 354,
+              "beat": 4,
+              "dot": 4,
+              "align": "right",
+              "settledMs": 575,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 108.2,
+                "sd": 36.1
+              }
+            }
+          ]
+        },
+        {
+          "id": "bar",
+          "frames": 300,
+          "scrollPx": 3798,
+          "stops": [
+            {
+              "p": 0.197,
+              "want": 59,
+              "frame": 58.97,
+              "target": 59,
+              "drawn": 59,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 1020,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 114.4,
+                "sd": 47.7
+              }
+            },
+            {
+              "p": 0.605,
+              "want": 181,
+              "frame": 180.99,
+              "target": 181,
+              "drawn": 181,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 527,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 59.8,
+                "sd": 48.8
+              }
+            },
+            {
+              "p": 0.746,
+              "want": 223,
+              "frame": 223.03,
+              "target": 223,
+              "drawn": 223,
+              "beat": 2,
+              "dot": 2,
+              "align": "right",
+              "settledMs": 524,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 52.8,
+                "sd": 50.6
+              }
+            },
+            {
+              "p": 0.925,
+              "want": 277,
+              "frame": 276.43,
+              "target": 276,
+              "drawn": 276,
+              "beat": 3,
+              "dot": 3,
+              "align": "left",
+              "settledMs": 377,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 83.4,
+                "sd": 47.1
+              }
+            }
+          ]
+        },
+        {
+          "id": "table",
+          "frames": 300,
+          "scrollPx": 3798,
+          "stops": [
+            {
+              "p": 0.197,
+              "want": 59,
+              "frame": 58.97,
+              "target": 59,
+              "drawn": 59,
+              "beat": 0,
+              "dot": 0,
+              "align": "left",
+              "settledMs": 682,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 113.6,
+                "sd": 49.2
+              }
+            },
+            {
+              "p": 0.507,
+              "want": 152,
+              "frame": 151.46,
+              "target": 151,
+              "drawn": 151,
+              "beat": 1,
+              "dot": 1,
+              "align": "right",
+              "settledMs": 469,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 72,
+                "sd": 42.6
+              }
+            },
+            {
+              "p": 0.915,
+              "want": 274,
+              "frame": 273.47,
+              "target": 273,
+              "drawn": 273,
+              "beat": 2,
+              "dot": 2,
+              "align": "left",
+              "settledMs": 430,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 123.9,
+                "sd": 58.1
+              }
+            }
+          ]
+        },
+        {
+          "id": "upstairs",
+          "frames": 200,
+          "scrollPx": 2532,
+          "stops": [
+            {
+              "p": 0.296,
+              "want": 59,
+              "frame": 59.02,
+              "target": 59,
+              "drawn": 59,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 969,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 98.9,
+                "sd": 28.3
+              }
+            },
+            {
+              "p": 0.774,
+              "want": 154,
+              "frame": 153.97,
+              "target": 154,
+              "drawn": 154,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 534,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 119.2,
+                "sd": 46.6
+              }
+            }
+          ]
+        },
+        {
+          "id": "after-dark",
+          "frames": 200,
+          "scrollPx": 2532,
+          "stops": [
+            {
+              "p": 0.296,
+              "want": 59,
+              "frame": 59.02,
+              "target": 59,
+              "drawn": 59,
+              "beat": 0,
+              "dot": 0,
+              "align": "right",
+              "settledMs": 730,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 65.4,
+                "sd": 45.1
+              }
+            },
+            {
+              "p": 0.779,
+              "want": 155,
+              "frame": 154.97,
+              "target": 155,
+              "drawn": 155,
+              "beat": 1,
+              "dot": 1,
+              "align": "left",
+              "settledMs": 480,
+              "px": {
+                "w": 499,
+                "h": 1080,
+                "mean": 69.9,
+                "sd": 36.3
+              }
+            }
+          ]
+        }
+      ],
+      "step": 3,
+      "requestsAtOpen": 413,
+      "loader": {
+        "requested": 2706,
+        "loaded": 2706,
+        "failed": 0,
+        "frameRequests": 2688
+      }
+    }
+  },
+  "summary": {
+    "total": 68,
+    "failed": 0
+  }
+}

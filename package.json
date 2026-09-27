@@ -13,6 +13,7 @@
     "setup": "npm run fetch:frames && npm run build:tiers",
     "simulate": "node tools/simulate.mjs",
     "test": "node --test tools/*.test.mjs",
+    "check:site": "node tools/site-check.mjs",
     "audit:browser": "node tools/browser-audit.mjs",
     "audit:sim": "node tools/simulate.mjs"
   },
